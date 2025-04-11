@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chip con Modal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    /* Estilo del fondo oscurecido */
+    .modal-fondo {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilo del contenido del modal */
+    .modal-contenido {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .cerrar:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chip" onclick="abrirModal()">Producto A</div>
+
+  <div id="miModal" class="modal-fondo">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <h3>Detalles del Producto A</h3>
+      <p>Este producto es increíble. Aquí puedes ver más información sobre él.</p>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal() {
+      document.getElementById('miModal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('miModal').style.display = 'none';
+    }
+
+    // También cerrar si se hace clic fuera del modal
+    window.onclick = function(event) {
+      const modal = document.getElementById('miModal');
+      if (event.target === modal) {
+        cerrarModal();
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
