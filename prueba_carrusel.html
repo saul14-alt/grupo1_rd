@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrusel con Información</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .carousel {
+      width: 50%;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .carousel img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+    }
+    .info {
+      width: 50%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .info h2 {
+      margin-top: 0;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .controls button {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="carousel">
+    <img id="carouselImage" src="imagenes/banner.jpg" alt="Imagen">
+    <div class="controls">
+      <button onclick="changeSlide(-1)">‹</button>
+      <button onclick="changeSlide(1)">›</button>
+    </div>
+  </div>
+  <div class="info">
+    <h2 id="infoTitle">Título 1</h2>
+    <p id="infoText">Descripción de la imagen 1. Aquí va la información correspondiente a la imagen del carrusel.</p>
+    <button class="btn">Ver más</button>
+  </div>
+</div>
+
+<script>
+  const images = [
+    {
+      src: "https://via.placeholder.com/400x300?text=Imagen+1",
+      title: "Título 1",
+      text: "Descripción de la imagen 1. Aquí va la información correspondiente a la imagen del carrusel."
+    },
+    {
+      src: "https://via.placeholder.com/400x300?text=Imagen+2",
+      title: "Título 2",
+      text: "Descripción de la imagen 2. Información diferente para esta imagen."
+    },
+    {
+      src: "https://via.placeholder.com/400x300?text=Imagen+3",
+      title: "Título 3",
+      text: "Descripción de la imagen 3. Texto relevante para esta imagen."
+    }
+  ];
+
+  let currentIndex = 0;
+
+  function changeSlide(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    document.getElementById('carouselImage').src = images[currentIndex].src;
+    document.getElementById('infoTitle').innerText = images[currentIndex].title;
+    document.getElementById('infoText').innerText = images[currentIndex].text;
+  }
+</script>
+
+</body>
+</html>

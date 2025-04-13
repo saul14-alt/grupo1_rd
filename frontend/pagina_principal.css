@@ -102,7 +102,7 @@ html{
 
 
 .estatico{
-    position: fixed; 
+   
     width: 125rem;
 }
 
@@ -214,7 +214,7 @@ html{
 /*BANER*/
 
 .banner{
-    background-image: linear-gradient(100deg, #000000, #00000020),url(banner.jpg);
+    background-image: linear-gradient(100deg, #000000, #00000020),url(imagenes/banner.jpg);
     height: 50rem;
     background-size: cover;
     background-position: center;
@@ -347,21 +347,21 @@ html{
 }
 
 .category-moca{
-    background-image: linear-gradient(#00000080,#00000080), url(fondo-celulares.jpg);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_S.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .category-capuchino{
-    background-image: linear-gradient(#00000080,#00000080), url(fondo-electrodomesticos.png);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_Z.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .category-expreso{
-    background-image: linear-gradient(#00000080,#00000080), url(fondo-accesorios.webp);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_A.jpg);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -635,11 +635,18 @@ html{
   }
 
   .watch {
-    background: linear-gradient(to bottom, #d6eefb, #141414);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_A.jpg);
   }
 
   .ipad {
-    background: linear-gradient(to bottom, #d6eefb, #e4f4ff);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-electrodomesticos.png);
+  }
+  .watch1 {
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-accesorios.webp);
+  }
+
+  .ipad1 {
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-celulares.jpg);
   }
 
 
@@ -700,6 +707,10 @@ html{
   }
 
   /* Contenedor del modal */
+
+  .Bienvenidologin{
+    
+  }
   .modal {
     width: 800px;
     max-width: 95%;
@@ -712,7 +723,7 @@ html{
   }
 
   .modal .izquierda {
-    background: #5e2ce8;
+    background: var(--primary-color);
     color: white;
     padding: 40px;
     flex: 1;
@@ -744,7 +755,7 @@ html{
 
   .boton {
     width: 100%;
-    background: #5e2ce8;
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 12px;
@@ -773,8 +784,187 @@ html{
       padding: 20px;
     }
   }
+  /* fin del Contenedor del modal */
 
+
+
+  /*carrusel*/
+  /*carrusel*/
+  /*carrusel*/
+
+  .electrodomesticos{
+    padding: 5rem;
+    justify-content: center;
+  }
+
+  .electro{
+    font-size: 3.5rem;
+    text-align: center;
+  }
+ 
+  .containercr {
+    display: flex;
+    height: 65vh;
+    
+  }
+
+  .carousel {
+    width: 50%;
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_S.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+  }
+  .carousel img {
+    border-radius: 12px;
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+    width: 100%;
+  }
+  .info {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .info h2 {
+    margin-top: -3rem;
+    gap: 4rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .btn {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #699fc3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 3rem;
+    border: #000;
+    font-size: 1.5rem;
+    margin-left: 15rem;
+  }
+  .btn:hover {
+    background-color: #060606;
+  }
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  .controls button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: 10%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+
+  }
+
+ /*fin del carrusel*/
+ /*fin del carrusel*/
+ /*fin del carrusel*/
   
+
+
+/*footer*/
+/*footer*/
+.footer {
+    background-color: #f7f7f7;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px 20px 20px;
+    border-top: 1px solid #ccc;
+    color: #333;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+  }
+  
+  .footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #000;
+  }
+  
+  .payment-methods img {
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+/*fin del footer*/
+/*fin del footer*/
  
 
   
