@@ -10,6 +10,7 @@ function abrirModal() {
   }
 
   // Cierra al hacer clic fuera del modal
+  
   window.onclick = function(e) {
     const modal = document.getElementById("modalLogin");
     if (e.target === modal) {
