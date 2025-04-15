@@ -635,7 +635,9 @@ html{
   }
 
   .watch {
-    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_A.jpg);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/samsung-galaxy-s25-ultra.webp);
+    max-width: 50%;
+    
   }
 
   .ipad {
@@ -653,11 +655,13 @@ html{
   .title {
     font-size: 32px;
     font-weight: bold;
+    color: white;
   }
 
   .subtitle {
     font-size: 20px;
     margin: 10px 0;
+    color: white;
   }
 
   .button {
@@ -709,8 +713,20 @@ html{
   /* Contenedor del modal */
 
   .Bienvenidologin{
-    
+    font-size: 3.5rem;
+    margin-top: -10rem;
   }
+
+  .ingresa-tus-datos{
+    font-size: 1.5rem;
+    color: #000;
+  }
+.crear-cuenta{
+  font-size: 3rem;
+  text-align: center;
+  gap: 2rem;
+}
+
   .modal {
     width: 800px;
     max-width: 95%;
@@ -754,7 +770,7 @@ html{
   }
 
   .boton {
-    width: 100%;
+    width: 50%;
     background: var(--primary-color);
     color: white;
     border: none;
@@ -763,6 +779,23 @@ html{
     border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 8rem;
+    justify-content: center;
+  }
+
+  .boton-iniciar-secion{
+    width: 50%;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    margin-top: 16.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 2rem;
+    justify-content: center;
+    gap: 2rem;
   }
 
   .cerrar {
