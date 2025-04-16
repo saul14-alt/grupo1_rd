@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Contenedor principal -->
+<div id="contenedor" class="contenedor">
+    <div id="registro" class="registro">
+      <div class="izquierda blanca">
+        <h2>Crear tu Cuenta</h2>
+        <input type="text" placeholder="Nombre" />
+        <input type="email" placeholder="email" />
+        <input type="password" placeholder="password" />
+        <button>ÚNETE</button>
+      </div>
+      <div class="derecha azul">
+        <h2>Bienvenido</h2>
+        <p>ingresa tus datos para registrarte</p>
+        <button id="btnLogin">Login</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal oculto inicialmente -->
+  <div id="modalLogin" class="modal oculto">
+    <div class="registro modal-registro">
+      <div class="izquierda blanca">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña" />
+        <button>Entrar</button>
+        <button onclick="cerrarModal()">Cancelar</button>
+      </div>
+      <div class="derecha azul">
+        <h2>Bienvenido</h2>
+        <p>Gracias por volver</p>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .registro {
+      display: flex;
+      width: 80%;
+      margin: auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    .izquierda,
+    .derecha {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .blanca {
+      background-color: #ffffff;
+    }
+  
+    .azul {
+      background-color: #6699b3;
+      color: white;
+    }
+  
+    .blanca input,
+    .modal input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+      border-radius: 5px;
+    }
+  
+    .blanca button,
+    .azul button {
+      background-color: #6699b3;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px auto 0;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      width: fit-content;
+    }
+  
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .modal-registro {
+      width: 600px;
+      height: 400px;
+    }
+  
+    .oculto {
+      display: none;
+    }
+  </style>
+  
+  <script>
+    const btnLogin = document.getElementById('btnLogin');
+    const modal = document.getElementById('modalLogin');
+    const registro = document.getElementById('registro');
+  
+    btnLogin.addEventListener('click', () => {
+      registro.style.display = 'none';
+      modal.classList.remove('oculto');
+    });
+  
+    function cerrarModal() {
+      modal.classList.add('oculto');
+      registro.style.display = 'flex';
+    }
+  </script>
+  
+</body>
+</html>

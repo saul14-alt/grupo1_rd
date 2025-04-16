@@ -36,6 +36,66 @@ html{
 
 }
 
+@media (max-width: 768px) {
+  .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      gap: 2rem;
+  }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 2rem;
+          gap: 2rem;
+      }
+  
+      .custoner-support,
+      .container-user {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+      }
+  
+      .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 2rem;
+          gap: 2rem;
+      }
+  
+      .menu {
+          flex-direction: column;
+          gap: 1.5rem;
+      }
+  
+      .search-form {
+          width: 100%;
+      }
+  
+      .search-form input {
+          width: 100%;
+      }
+  
+      .content-banner {
+          padding: 10rem 2rem;
+          text-align: center;
+      }
+  
+      .content-banner h2 {
+          font-size: 2.5rem;
+      }
+  
+      .container {
+          padding: 0 2rem;
+      }
+  }
+  
+
+
 .hero{
     display: flex;
     justify-content: space-between;
@@ -103,113 +163,214 @@ html{
 
 .estatico{
    
-    width: 125rem;
+  width: 100%;
+  max-width: 125rem;
+  
 }
+
+@media (max-width: 768px) {
+  .container.hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .custoner-support,
+  .container-user {
+    justify-content: center;
+  }
+
+  .container-logo {
+    margin: 1rem 0;
+  }
+
+  .custoner-support span.text,
+  .content-shoping-cart span.text {
+    display: none; /* Oculta textos largos si quieres más limpieza */
+  }
+
+  .custoner-support .number,
+  .content-shoping-cart .number {
+    font-size: 0.9rem;
+  }
+
+  .login-icon,
+  .fa-cart-shopping {
+    font-size: 1.2rem;
+  }
+}
+
+.container-hero {
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+}
+
+.container.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.custoner-support,
+.container-logo,
+.container-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-logo {
+  flex: 1;
+  justify-content: center;
+}
+
+.container-user {
+  gap: 1rem;
+
+}
+
+.separacion-nuevos{
+  padding: 0.6rem;
+}
+
 
 
 
 
 /*NAVBAR*/
 
-.container-navbar{
-    
-    background-color: #699fc3;
+.container-navbar {
+  background-color: var(--primary-color);
 }
 
-.navbar{
-    
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.navbar .fa-bars{
+#menu-toggle {
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: var(--dark-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.menu li a::after {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover::after {
+  opacity: 1;
+}
+
+.menu li a:hover {
+  color: #fff;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  background-color: #fff;
+  height: 4.4rem;
+  overflow: hidden;
+}
+
+.search-form input {
+  outline: none;
+  font-family: inherit;
+  border: none;
+  width: 25rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  color: #777;
+}
+
+.btn-search {
+  border: none;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.btn-search i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .menu {
     display: none;
-
-}
-
-.menu{
-    display: flex;
-    gap: 4rem;
-}
-
-.menu li{
-    list-style: none;
-}
-
-.menu li {
-    text-decoration: none;
-    font-size: 1.7rem;
-    color: var(--dark-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    position: relative;
-    margin-top: 1rem;
-}
-
-.menu li::after{
-    content: '';
-    width: 1.5rem;
-    height: 1px;
-    background-color: #fff;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    opacity: 0;
-    transition: all .3s ease ;
-}
-
-.menu li:hover::after{
-    opacity: 1;
-}
-
-.menu li:hover{
-    color: #fff;
-}
-
-
-
-.search-form{
-    position: relative;
-    display: flex;
-    align-items: center;
-    border: 2px solid #fff;
-    border-radius: 2rem;
-    background-color: #fff;
-    height: 4.4rem;
-    overflow: hidden;
-}
-
-.search-form input{
-    outline: none;
-    font-family: inherit;
-    border: none;
-    width: 25rem;
-    font-size: 1.4rem;
-    padding:  2rem;
-    color: #777;
-    cursor: pointer;
-}
-
-.search-form input::-webkit-search-cancel-button{
-    appearance: none;
-}
-
-.search-form .btn-search{
-    border:none;
+    flex-direction: column;
+    width: 100%;
     background-color: var(--primary-color);
+    margin-top: 1rem;
+  }
+
+  .menu.active {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 1rem;
+  }
+
+  .menu li {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .menu li a {
+    color: white;
+    font-size: 1.6rem;
+    display: block;
+    width: 100%;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 
-.btn-search i{
-    font-size: 2rem;
-    color: #fff;
-}
+
 
 /*BANER*/
 
@@ -404,7 +565,7 @@ html{
     padding: 1rem 3rem;
     text-transform: uppercase;
     border-radius: 3rem;
-    border: transparent;
+    border: black;
 }
 
 .ver-mas:hover{
@@ -415,6 +576,14 @@ html{
     border: #000000;
     border-color: #000000;
 }
+
+@media (max-width: 768px) {
+  .container-categories,
+  .container-features {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /*top-products*/
 
@@ -615,7 +784,7 @@ html{
 
 
 
-
+/* nuevos*/
 
   .contenedor {
     display: flex;
@@ -636,19 +805,25 @@ html{
 
   .watch {
     background-image: linear-gradient(#00000080,#00000080), url(imagenes/samsung-galaxy-s25-ultra.webp);
-    max-width: 50%;
-    
+    width: 100%;
+    height: auto;
   }
 
   .ipad {
-    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-electrodomesticos.png);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/Galaxy\ Z\ Fold6.jpg);
+    width: 100%;
+    height: auto;
   }
   .watch1 {
-    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-accesorios.webp);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/Galaxy\ Ring.jpg);
+    width: 100%;
+    height: auto;
   }
 
   .ipad1 {
-    background-image: linear-gradient(#00000080,#00000080), url(imagenes/fondo-celulares.jpg);
+    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_tab_s10.jpg);
+    width: 100%;
+    height: auto;
   }
 
 
@@ -667,7 +842,7 @@ html{
   .button {
     margin-top: 20px;
     padding: 12px 24px;
-    background-color: #0071e3;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 20px;
@@ -689,6 +864,14 @@ html{
     font-size: 3.5rem;
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    .section .watch,
+    .section .ipad {
+      grid-template-columns: 1fr;
+    }
+  }
+  
   
 
 
@@ -817,6 +1000,132 @@ html{
       padding: 20px;
     }
   }
+
+  /*modal login*/
+  .modal-fondo {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s ease;
+    
+
+    
+  }
+
+  /* Contenedor del modal */
+
+  .Bienvenidologin{
+    font-size: 3.5rem;
+    margin-top: -10rem;
+  }
+
+  .ingresa-tus-datos{
+    font-size: 1.5rem;
+    color: #000;
+  }
+.crear-cuenta{
+  font-size: 3rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+  .modal2 {
+    width: 800px;
+    max-width: 95%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  .modal2 .izquierda {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  .modal2 .derecha {
+    flex: 1;
+    padding: 40px;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  .modal2 h2 {
+    margin-top: 0;
+  }
+
+  .input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: #f1f1f1;
+  }
+
+  .boton {
+    width: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8rem;
+    justify-content: center;
+  }
+
+  .boton-iniciar-secion{
+    width: 50%;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    margin-top: 16.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 2rem;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 1200;
+  }
+
+  @media (max-width: 600px) {
+    .modal2 {
+      flex-direction: column;
+    }
+
+    .modal2 .izquierda, .modal2 .derecha {
+      padding: 20px;
+    }
+  }
+  /*modal login*/
+
   /* fin del Contenedor del modal */
 
 

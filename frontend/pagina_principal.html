@@ -39,7 +39,7 @@
                               <div class="izquierda">
                                 <h2 class="Bienvenidologin">Bienvenido</h2>
                                 <p class="ingresa-tus-datos">ingresa tus datos para regristrarte</p>
-                                <button class="boton-iniciar-secion">Login</button>
+                                <button class="boton-iniciar-secion" onclick="abrirModal2()">Login</button>
                               </div>
                               <div class="derecha">
                                 <h2 class="crear-cuenta">Crear tu Cuenta</h2>
@@ -52,6 +52,30 @@
                             </div>
                             <span class="cerrar" onclick="cerrarModal()">&times;</span>
                           </div>
+                          <!-- inventando-->
+                        <div id="modal2Login" class="modal-fondo">
+                            <div class="modal2">
+                              <div class="izquierda">
+                                <h2 class="Bienvenidologin">MMG</h2>
+                                <p class="ingresa-tus-datos">ingresa tus datos para Login</p>
+                                
+                              </div>
+                              <div class="derecha">
+                                <h2 class="crear-cuenta">Login</h2>
+                                <p><small></small></p>
+                                <input class="input" type="email" placeholder="email">
+                                <input class="input" type="password" placeholder="password">
+                                <button class="boton">ÚNETE</button>
+                              </div>
+                            </div>
+                            <span class="cerrar" onclick="cerrarModal2()">&times;</span>
+                          </div>
+                          <script src="pagina_principal.js"></script>
+                           <!-- inventando-->
+                          
+
+
+
 
                           <script src="pagina_principal.js"></script>
 
@@ -68,35 +92,39 @@
                 </div>
             </div>
             <div class="container-navbar">
-                <nav class="navbar container">
-                    <i class="fa-solid fa-bars"></i>
-                    <ul class="menu">
-                        <div class="menu-bajante">
-                            <li><a href="#"></a class="Tienda">Tienda Online
-                                
-                            </div>
-                        </li>
-                        <li><a href="#"></a class="Moviles">Moviles
-                        </li>
-                        <li><a href="#"></a>TV</li>
-                        <li><a href="#"></a>Accesorios</li>
-                        <li><a href="#"></a>Electrodomesticos</li>
-                        <li><a href="#"></a>Todo</li>
-                    </ul>
-                    <div class="search-form">
-                        <input type="search" placeholder="buscar....">
-                        <button class="btn-search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    
-                    
-                </nav>
-            </div>
-            
-
+              <nav class="navbar container">
+                  <i class="fa-solid fa-bars" id="menu-toggle"></i>
+                  <ul class="menu">
+                    <li><a href="#">Tienda Online</a></li>
+                    <li><a href="#">Moviles</a></li>
+                    <li><a href="#">TV</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Electrodomésticos</a></li>
+                    <li><a href="#">Todo</a></li>
+                </ul>                
+                  <div class="search-form">
+                      <input type="search" placeholder="Buscar...">
+                      <button class="btn-search">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                  </div>
+              </nav>
+          </div>
             </div>
         </div>
+        
+        <script>
+          const menuToggle = document.getElementById('menu-toggle');
+          const navbarContent = document.querySelector('.navbar-content');
+        
+          menuToggle.addEventListener('click', () => {
+            navbarContent.classList.toggle('active');
+          });
+        </script>
+        
+      
+
+
     </header>
     <section class="banner">
         <div class="content-banner">
@@ -131,26 +159,29 @@
         </div>
       
         <div class="section ipad">
-          <div class="title">iPad <span style="color: #2997ff;">air</span></div>
-          <div class="subtitle">Ahora con los superpoderes del chip M3.</div>
-          <div class="subtitle" style="font-size: 16px; color: #555;">Consulta la disponibilidad más adelante</div>
+          <div class="title">Galaxy Z Fold6<span style="color: var(#6699b3);"></span></div>
+          <div class="subtitle">Galaxy Z</div>
+          <div class="subtitle" style="font-size: 16px; color: white;">Sistema operativo. OneUI 6.1, Android 14.</div>
           <button class="button">Más información</button>
           
         </div>
       </div>
+     
+      <div class="separacion-nuevos"></div>
+
     <div class="contenedor">
         <div class="section watch1">
-          <div class="title"> WATCH</div>
-          <div class="subtitle">SERIES 10</div>
-          <div class="subtitle">Delgado. Estilizado. Avanzado.</div>
+          <div class="title">Samsung Galaxy Ring</div>
+          <div class="subtitle">Galaxy Ring</div>
+          <div class="subtitle">ofrecen diferentes funciones para seguir de cerca tu salud y tu forma física.</div>
           <button class="button">Más información</button>
           
         </div>
       
         <div class="section ipad1">
-          <div class="title">iPad <span style="color: #2997ff;">air</span></div>
-          <div class="subtitle">Ahora con los superpoderes del chip M3.</div>
-          <div class="subtitle" style="font-size: 16px; color: #555;">Consulta la disponibilidad más adelante</div>
+          <div class="title">Galaxy Tab S10 Series<span style="color: var(#6699b3);"></span></div>
+          <div class="subtitle">Galaxy Tab</div>
+          <div class="subtitle" style="font-size: 16px; color: white;">Resolución de pantalla de 2960px x 1848px.</div>
           <button class="button">Más información</button>
           
         </div>
