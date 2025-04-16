@@ -1,296 +1,432 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moviles</title>
+    <title>RD_Tecnology</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="pagina_MOVILES.css">
-    <link rel="icon" href="WhatsApp Image 2025-02-22 at 10.01.49 AM.jpeg">
+    <link rel="stylesheet" href="pagina_principal.js">
+    <link rel="icon" href="imagenes/WhatsApp Image 2025-02-22 at 10.01.49 AM.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container-hero">
-            <div class="container hero">
-             <div class="custoner-support">
-                <i class="fa-solid fa-earth-americas"></i>
-                <div class="content-custoner-support">
-                 <span class="text">soporte al cliente</span>  
-                 <span class="number">4748398</span> 
-                </div>  
-             </div> 
-               <div class="container-logo">
-                <link rel="stylesheet" href="">
-                <h1 class="logo"><a href="/">RD_Tecnology</a></h1>
-               </div>
+    <header >
+        <div class="estatico" >
 
-              <div class="container-user">
-                <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-               <div class="content-shoping-cart">
-                <span class="text">carrito</span>
-                <span class="number">(0)</span>
-               </div>
-              </div> 
-            </div>
-        </div>
-        <div class="container-navbar">
-            <nav class="navbar container">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <div class="menu-bajante">
-                   <li><a href="#"></a class="Tienda">Tienda Online
-                     </div>
-                </li>
-
-                   <li><a href="#"></a class="Moviles">Moviles
+            <div class="container-hero" >
+                <div class="container hero" >
+                    <div class="custoner-support">
+                        <img src="imagenes/WhatsApp Image 2025-02-22 at 10.01.49 AM.ico" width="50" alt="" class="imacon">
+                        <div class="content-custoner-support">
+                            <span class="text">soporte al cliente</span>  
+                            <span class="number">4748398</span> 
+                        </div>  
+                    </div> 
+                    <div class="container-logo">
+                        <link rel="stylesheet" href="">
+                        <h1 class="logo"><a href="/">RD_Tecnology</a></h1>
+                    </div>
                     
-                </li>
-                   <li><a href="#"></a>TV</li>
-                   <li><a href="#"></a>Accesorios</li>
-                   <li><a href="#"></a>Electrodomesticos</li>
-                   <li><a href="#"></a>Todo</li>
-                </ul>
-                <div class="search-form">
-                    <input type="search" placeholder="buscar....">
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <div class="container-user"  >
+                        <!-- Icono de login -->
+
+                        <i class="fas fa-user login-icon" onclick="abrirModal()"  ></i>
+
+                        <!-- modal -->
+                        <div id="modalLogin" class="modal-fondo"  data-aos="fade-up" >
+                            <div class="modal">
+                              <div class="izquierda">
+                                <h2 class="Bienvenidologin">Bienvenido</h2>
+                                <p class="ingresa-tus-datos">ingresa tus datos para regristrarte</p>
+                                <button class="boton-iniciar-secion" onclick="abrirModal2()">Login</button>
+                              </div>
+                              <div class="derecha">
+                                <h2 class="crear-cuenta">Crear tu Cuenta</h2>
+                                <p><small></small></p>
+                                <input class="input" type="text" placeholder="Nombre">
+                                <input class="input" type="email" placeholder="email">
+                                <input class="input" type="password" placeholder="password">
+                                <button class="boton">ÚNETE</button>
+                              </div>
+                            </div>
+                            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                          </div>
+                          <!-- inventando-->
+                        <div id="modal2Login" class="modal-fondo"  data-aos="fade-up" >
+                            <div class="modal2">
+                              <div class="izquierda">
+                                <h2 class="Bienvenidologin">MMG</h2>
+                                <p class="ingresa-tus-datos">ingresa tus datos para Login</p>
+                                
+                              </div>
+                              <div class="derecha">
+                                <h2 class="crear-cuenta">Login</h2>
+                                <p><small></small></p>
+                                <input class="input" type="email" placeholder="email">
+                                <input class="input" type="password" placeholder="password">
+                                <button class="boton">ÚNETE</button>
+                              </div>
+                            </div>
+                            <span class="cerrar" onclick="cerrarModal2()">&times;</span>
+                          </div>
+                          <script src="pagina_principal.js"></script>
+                           <!-- inventando-->
+                          
+
+
+
+
+                          <script src="pagina_principal.js"></script>
+
+                        <!-- final del modal -->
+
+
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="content-shoping-cart"  data-aos="fade-up">
+                            <span class="text">carrito</span>
+                            <span class="number">(0)</span>
+                        </div>
+                    </div> 
                 </div>
-
-
-            </nav>
-            
-
+            </div>
+            <div class="container-navbar" data-aos="fade-up">
+              <nav class="navbar container">
+                  <i class="fa-solid fa-bars" id="menu-toggle"></i>
+                  <ul class="menu">
+                    <li><a href="pagina_principal.html">Tienda Online</a></li>
+                    <li><a href="pagina_MOVILES.html">Celulares</a></li>
+                    <li><a href="pagina_TV.html">TV</a></li>
+                    <li><a href="pagina_accesorios.html">Accesorios</a></li>
+                    <li><a href="pagina_electrodomesticos.html">Electrodomesticos</a></li>
+                    <li><a href="pagina_principal.html">Todo</a></li>
+                </ul>                
+                  <div class="search-form">
+                      <input type="search" placeholder="Buscar...">
+                      <button class="btn-search">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                  </div>
+              </nav>
+          </div>
             </div>
         </div>
+        
+        <script>
+          const menuToggle = document.getElementById('menu-toggle');
+          const navbarContent = document.querySelector('.navbar-content');
+        
+          menuToggle.addEventListener('click', () => {
+            navbarContent.classList.toggle('active');
+          });
+        </script>
+        
+      
+
+
     </header>
-    <section class="banner">
+    <section class="banner"  data-aos="fade-up">
         <div class="content-banner">
             <p>tecnologia al alcance de tus manos</p>
             <h2>RD_Tecnology <br>calidad y precio</h2>
             <a href="#">comprar ahora</a>
+            <img src="baner.jpg" alt="">
         </div>
     </section>
 
-<div class="ofertas">
-    <h1 class="parrafo-ofertas">Ofertas </h1>
-</div>
+
+
+  <!--producto1-->
+    <!--producto1-->
+      <!--producto1-->
+
+<div class="productos-venta">
+  
+  <div class="ofertas">
+        <h1 class="parrafo-ofertas">Ofertas </h1>
+    </div>
+    
+    
+        <div class="container-products1">
+            <!--producto1-->
+          <div class="card-product1">
+            <div class="container-img1">
+                <img src="imagenes/samsung1.jpeg" alt="samsung1">
+                <span class="discount1">-10%</span>
+                <div class="button-group1">
+                    
+                </div>
+            </div>
+            <div class="content-card-product1">
+                <div class="stars1">
+                  <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>samsung</h3>
+                <span class="add-cart1">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <p class="price1">$100.65 <span>$110.65</span></p>
+            </div>
+          </div>
+            <!--producto1-->
+          <div class="card-product1">
+            <div class="container-img1">
+                <img src="imagenes/samsung1.jpeg" alt="samsung1">
+                <span class="discount1">-10%</span>
+                <div class="button-group1">
+                    
+                  </div>
+            </div>
+            <div class="content-card-product1">
+                <div class="stars1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>samsung</h3>
+                <span class="add-cart1">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <p class="price1">$100.65 <span>$110.65</span></p>
+            </div>
+          </div>
+          <!--producto1-->
+          <div class="card-product1">
+            <div class="container-img1">
+                <img src="imagenes/samsung1.jpeg" alt="samsung1">
+                <span class="discount1">-10%</span>
+                <div class="button-group1">
+                </div>
+            </div>
+            <div class="content-card-product1">
+                <div class="stars1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>samsung</h3>
+                <span class="add-cart1">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <p class="price1">$100.65 <span>$110.65</span></p>
+              </div>
+          </div>
+            <!--producto1-->
+            <div class="card-product1">
+              <div class="container-img1">
+                <img src="imagenes/samsung1.jpeg" alt="samsung1">
+                <span class="discount1">-10%</span>
+                <div class="button-group1">
+                   
+                </div>
+            </div>
+            <div class="content-card-product1">
+                <div class="stars1">
+                  <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>samsung</h3>
+                <span class="add-cart1">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <p class="price1">$100.65 <span>$110.65</span></p>
+            </div>
+          </div>
+          <!--producto1-->
+          <div class="card-product1">
+            <div class="container-img1">
+              <img src="imagenes/samsung1.jpeg" alt="samsung1">
+              <span class="discount1">-10%</span>
+              <div class="button-group1">
+                    
+                  </div>
+                </div>
+                <div class="content-card-product1">
+                <div class="stars1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>samsung</h3>
+                <span class="add-cart1">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+                <p class="price1">$100.65 <span>$110.65</span></p>
+            </div>
+          </div>
+          </div>
+          
+          
+          
+            
+  <!--producto1-->
+    <!--producto1-->
+      <!--producto1-->
 
 
 
 
 
 
-    <div class="container-products">
-        <!--producto1-->
-      <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer-->
+<!-- footer-->
+<!-- footer-->
+<footer class="footerc"  data-aos="fade-up">
+    <div class="footerc-top">
+      <div class="footerc-column">
+        <h4>Otras secciones</h4>
+        <ul>
+          <li><a href="#">Conócenos</a></li>
+          <li><a href="#">Soporte</a></li>
+          <li><a href="#">Seguimiento de tu pedido</a></li>
+          <li><a href="#">Condiciones de Compra</a></li>
+        </ul>
+      </div>
+      <div class="footerc-column">
+        <h4>¿Necesitas soporte?</h4>
+        <ul>
+          <li><a href="#">Soporte telefónico</a></li>
+          <li><a href="#">Soporte vía eMail</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+      <div class="footerc-column">
+        <h4>Sitios Oficiales</h4>
+        <ul>
+          <li><a href="#">Samsung Costa Rica</a></li>
+          <li><a href="#">Samsung Ecuador</a></li>
+          <li><a href="#">Samsung El Salvador</a></li>
+          <li><a href="#">Samsung Guatemala</a></li>
+          <li><a href="#">Samsung Honduras</a></li>
+          <li><a href="#">Samsung Nicaragua</a></li>
+          <li><a href="#">Samsung Panamá</a></li>
+          <li><a href="#">Samsung República Dominicana</a></li>
+          <li><a href="#">Samsung Venezuela</a></li>
+        </ul>
+      </div>
+      <div class="footerc-column">
+        <h4>Síguenos en:</h4>
+        <div class="socialc-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fas fa-at"></i></a>
         </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
+        <div class="paymentc-methods">
+          <img src="img/visa.png" alt="Visa">
+          <img src="img/mastercard.png" alt="Mastercard">
+          <img src="img/amex.png" alt="American Express">
         </div>
       </div>
-      <!--producto2-->
-      <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
+    </div>
+  
+    <div class="footerc-bottom">
+      <p>Copyright© 1995–2025 SAMSUNG Todos los Derechos Reservados.</p>
+      <p>Este sitio se ve mejor en las últimas versiones de Chrome, Edge, Safari y Mozilla Firefox.</p>
+      <div class="footer-links">
+        <a href="#">Ayuda para accesibilidad</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Legal</a>
       </div>
-       <!--producto3-->
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
-       <!--producto4--> 
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
-       <!--producto4--> 
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
-       <!--producto4--> 
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
-       <!--producto4--> 
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
-       <!--producto4--> 
-       <div class="card-product">
-        <div class="container-img">
-            <img src="samsung1.jpeg" alt="samsung1">
-            <span class="discount">-10%</span>
-            <div class="button-group">
-                <span><i class="fa-solid fa-eye"></i></span>
-                <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-code-compare"></i></span>
-            </div>
-        </div>
-        <div class="content-card-product">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <h3>samsung</h3>
-            <span class="add-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </span>
-            <p class="price">$100.65 <span>$110.65</span></p>
-        </div>
-      </div>
+    </div>
+  </footer>
+  
+
+<!-- footer-->
+<!-- footer-->
+<!-- footer-->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+
+
+
     
 </body>
 </html>
