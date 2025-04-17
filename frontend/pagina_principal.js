@@ -31,39 +31,39 @@ window.onclick = function (e) {
 };
 
 // TOGGLE PARA MENU (si lo estás usando en tu nav)
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.querySelector('.menu');
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".menu");
 
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
+menuToggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
 });
 
 // FUNCIÓN DE LOGIN
 async function handleLogin() {
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
 
   try {
-    const res = await fetch('http://localhost:3000/api/login', {
-      method: 'POST',
+    const res = await fetch("http://localhost:4000/api/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
 
     if (res.ok) {
-      alert('✅ Login exitoso');
+      alert("✅ Login exitoso");
       // Puedes guardar el token si lo necesitas
       // localStorage.setItem('token', data.token);
       cerrarModal2();
     } else {
-      alert(data.message || '❌ Credenciales incorrectas');
+      alert(data.message || "❌ Credenciales incorrectas");
     }
   } catch (err) {
     console.error(err);
-    alert('⚠️ Error al conectar con el servidor');
+    alert("⚠️ Error al conectar con el servidor");
   }
 }

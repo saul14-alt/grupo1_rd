@@ -46,11 +46,12 @@
                               <div class="derecha">
                                 <h2 class="crear-cuenta">Crear tu Cuenta</h2>
                                 <p><small></small></p>
-                                <input class="input" type="text" placeholder="Nombre">
-                                <input class="input" type="email" placeholder="email">
-                                <input class="input" type="password" placeholder="password">
-                                <button class="boton">ÚNETE</button>
+                                <input class="input" type="text" placeholder="Nombre" id="registerName">
+                                <input class="input" type="email" placeholder="email" id="registerEmail">
+                                <input class="input" type="password" placeholder="password" id="registerPassword">
+                                <button class="boton" onclick="handleRegister()">ÚNETE</button>
                               </div>
+                              
                             </div>
                             <span class="cerrar" onclick="cerrarModal()">&times;</span>
                           </div>
@@ -81,6 +82,37 @@
 
 
                           <script src="pagina_principal.js"></script>
+                          <script>
+                            async function handleRegister() {
+                              const name = document.getElementById('registerName').value;
+                              const email = document.getElementById('registerEmail').value;
+                              const password = document.getElementById('registerPassword').value;
+
+                              try {
+                                const res = await fetch('http://localhost:4000/api/register', {
+                                  method: 'POST',
+                                  headers: {
+                                    'Content-Type': 'application/json'
+                                  },
+                                  body: JSON.stringify({ name, email, password })
+                                });
+
+                                const data = await res.json();
+
+                                if (res.ok) {
+                                  alert('✅ Registro exitoso. Ahora inicia sesión.');
+                                  cerrarModal(); // o abre directamente el login
+                                  abrirModal2(); // para llevarlo al login
+                                } else {
+                                  alert(data.message || '❌ Error al registrarse');
+                                }
+                              } catch (err) {
+                                console.error(err);
+                                alert('⚠️ Error al conectar con el servidor');
+                              }
+                            }
+
+                          </script>
 
                         <!-- final del modal -->
 
