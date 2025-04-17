@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Producto con Modal</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    /* Card Producto */
+    .card-product1 {
+      background-color: beige;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .card-product1 img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    .card-product1 h3 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .card-product1 h3:hover {
+      color: #007BFF;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-product {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-product img {
+      max-width: 250px;
+      border-radius: 1rem;
+    }
+
+    .modal-details p {
+      margin: 0.5rem 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Card Producto -->
+  <div class="card-product1">
+    <img src="samsung1.jpegS">
+    <h3>Galaxy S23</h3>
+  </div>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="modal-product">
+        <img id="modal-image" src="" alt="Producto" />
+        <div class="modal-details">
+          <h2 id="modal-name"></h2>
+          <p><strong>Marca:</strong> <span id="modal-brand"></span></p>
+          <p><strong>Modelo:</strong> <span id="modal-model"></span></p>
+          <p><strong>Descripción:</strong> <span id="modal-description"></span></p>
+          <p><strong>Precio:</strong> $<span id="modal-price"></span></p>
+          <p><strong>Descuento:</strong> <span id="modal-discount"></span>%</p>
+          <p><strong>Stock:</strong> <span id="modal-stock"></span> unidades</p>
+          <p><strong>Categoría:</strong> <span id="modal-category"></span></p>
+          <p><strong>Color:</strong> <span id="modal-color"></span></p>
+          <p><strong>Almacenamiento:</strong> <span id="modal-storage"></span></p>
+          <p><strong>Destacado:</strong> <span id="modal-featured"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const exampleProduct = {
+      name: "Galaxy S23",
+      brand: "Samsung",
+      model: "SM-G990",
+      imageURL: "samsung1.jpeg",
+      description: "El nuevo Galaxy S23 con cámara épica y gran rendimiento.",
+      price: 999.99,
+      stock: 20,
+      category: "Smartphone",
+      color: "Negro",
+      storage: "128GB",
+      discount: 10,
+      isFeatured: true
+    };
+
+    function showModal(product) {
+      document.getElementById("modal-name").textContent = product.name;
+      document.getElementById("modal-brand").textContent = product.brand;
+      document.getElementById("modal-model").textContent = product.model;
+      document.getElementById("modal-description").textContent = product.description;
+      document.getElementById("modal-price").textContent = product.price;
+      document.getElementById("modal-stock").textContent = product.stock;
+      document.getElementById("modal-category").textContent = product.category;
+      document.getElementById("modal-color").textContent = product.color || "N/A";
+      document.getElementById("modal-storage").textContent = product.storage || "N/A";
+      document.getElementById("modal-discount").textContent = product.discount;
+      document.getElementById("modal-featured").textContent = product.isFeatured ? "Sí" : "No";
+      document.getElementById("modal-image").src = product.imageURL;
+
+      document.getElementById("productModal").style.display = "block";
+    }
+
+    document.querySelector("h3").addEventListener("click", () => {
+      showModal(exampleProduct);
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", () => {
+      document.getElementById("productModal").style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target.id === "productModal") {
+        document.getElementById("productModal").style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
