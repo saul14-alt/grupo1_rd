@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Producto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 60px auto;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .image-section {
+      flex: 1 1 40%;
+      background-color: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      border: 5px solid white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-section {
+      flex: 1 1 60%;
+      padding: 40px 50px;
+    }
+
+    .details-section h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1f2937;
+    }
+
+    .price {
+      font-size: 28px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #6b7280;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .stock {
+      color: #dc2626;
+      font-weight: 600;
+      margin: 10px 0 20px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .info span {
+      font-weight: 500;
+      color: #374151;
+    }
+
+    .buy-button {
+      margin-top: 30px;
+      background: #2563eb;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .buy-button:hover {
+      background: #1d4ed8;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .details-section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="image-section">
+    <img id="product-image" src="imagenes/samsung1.jpeg" alt="Producto" />
+  </div>
+
+  <div class="details-section">
+    <h1 id="product-name">Nombre del producto</h1>
+    <p class="price" id="product-price">RD$ 0.00</p>
+    <p class="old-price" id="product-old-price"></p>
+    <p class="stock" id="product-stock">Sólo queda X unidades</p>
+
+    <ul id="product-description"></ul>
+
+    <div class="info">
+      <p><strong>Marca:</strong> <span id="brand"></span></p>
+      <p><strong>Modelo:</strong> <span id="model"></span></p>
+      <p><strong>Color:</strong> <span id="color"></span></p>
+      <p><strong>Almacenamiento:</strong> <span id="storage"></span></p>
+      <p><strong>Categoría:</strong> <span id="category"></span></p>
+    </div>
+
+    <button class="buy-button">Añadir al carrito</button>
+  </div>
+</div>
+
+<script>
+  const productId = "123456"; // Cambia esto si lo haces dinámico
+
+  fetch(`http://localhost:3000/api/products/${productId}`)
+    .then(res => res.json())
+    .then(product => {
+      document.getElementById("product-image").src = product.imageURL;
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = `RD$ ${product.price.toLocaleString('es-DO')}.00`;
+
+      if (product.discount > 0) {
+        const oldPrice = (product.price / (1 - product.discount / 100)).toFixed(2);
+        document.getElementById("product-old-price").textContent = `RD$ ${parseFloat(oldPrice).toLocaleString('es-DO')}`;
+      }
+
+      document.getElementById("product-stock").textContent = `Sólo queda ${product.stock} unidad${product.stock === 1 ? '' : 'es'}`;
+
+      const descList = document.getElementById("product-description");
+      descList.innerHTML = "";
+      product.description.split('.').forEach(txt => {
+        if (txt.trim()) {
+          const li = document.createElement('li');
+          li.textContent = txt.trim();
+          descList.appendChild(li);
+        }
+      });
+
+      document.getElementById("brand").textContent = product.brand || 'N/A';
+      document.getElementById("model").textContent = product.model || 'N/A';
+      document.getElementById("color").textContent = product.color || 'N/A';
+      document.getElementById("storage").textContent = product.storage || 'N/A';
+      document.getElementById("category").textContent = product.category || 'N/A';
+    })
+    .catch(err => {
+      console.error('Error cargando producto:', err);
+    });
+</script>
+
+</body>
+</html>

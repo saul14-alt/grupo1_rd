@@ -2,92 +2,70 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Chip con Modal</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .chip {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    /* Estilo del fondo oscurecido */
-    .modal-fondo {
-      display: none; /* Oculto por defecto */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Estilo del contenido del modal */
-    .modal-contenido {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      position: relative;
-    }
-
-    .cerrar {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #888;
-    }
-
-    .cerrar:hover {
-      color: #000;
-    }
-  </style>
+  <title>Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-  <div class="chip" onclick="abrirModal()">Producto A</div>
-
-  <div id="miModal" class="modal-fondo">
-    <div class="modal-contenido">
-      <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <h3>Detalles del Producto A</h3>
-      <p>Este producto es increíble. Aquí puedes ver más información sobre él.</p>
-    </div>
+  <div class="container mt-5">
+    <h1 class="mb-4">Productos Disponibles</h1>
+    <div class="row" id="productos"></div>
   </div>
 
   <script>
-    function abrirModal() {
-      document.getElementById('miModal').style.display = 'flex';
-    }
-
-    function cerrarModal() {
-      document.getElementById('miModal').style.display = 'none';
-    }
-
-    // También cerrar si se hace clic fuera del modal
-    window.onclick = function(event) {
-      const modal = document.getElementById('miModal');
-      if (event.target === modal) {
-        cerrarModal();
+    const productos = [
+      {
+        _id: "1",
+        name: "Galaxy S23 Ultra",
+        brand: "Samsung",
+        model: "S23U",
+        imageURL: "https://images.samsung.com/is/image/samsung/p6pim/do/2302/gallery/do-galaxy-s23-s918-sm-s918bzkgdco-thumb-535843113",
+        description: "El Galaxy S23 Ultra es el smartphone más poderoso.",
+        price: 74999,
+        stock: 10,
+        category: "Smartphone",
+        color: "Negro",
+        storage: "256GB",
+        discount: 10,
+        isFeatured: true
+      },
+      {
+        _id: "2",
+        name: "Galaxy A54",
+        brand: "Samsung",
+        model: "A54",
+        imageURL: "https://images.samsung.com/is/image/samsung/p6pim/do/2303/gallery/do-galaxy-a54-5g-sm-a546ezkudco-thumb-535430891",
+        description: "Potente y elegante para tu día a día.",
+        price: 25999,
+        stock: 15,
+        category: "Smartphone",
+        color: "Verde",
+        storage: "128GB",
+        discount: 5,
+        isFeatured: false
       }
-    }
-  </script>
+    ];
 
+    // Mostrar productos
+    const contenedor = document.getElementById('productos');
+
+    productos.forEach(producto => {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-4';
+      col.innerHTML = `
+        <div class="card h-100">
+          <img src="${producto.imageURL}" class="card-img-top" alt="${producto.name}">
+          <div class="card-body">
+            <h5 class="card-title">${producto.name}</h5>
+            <p class="card-text">RD$ ${producto.price}</p>
+            <a href="producto.html?id=${producto._id}" class="btn btn-primary">Ver detalles</a>
+          </div>
+        </div>
+      `;
+      contenedor.appendChild(col);
+    });
+
+    // Guardar en localStorage para usar en producto.html
+    localStorage.setItem('productos', JSON.stringify(productos));
+  </script>
 </body>
 </html>
-
-
