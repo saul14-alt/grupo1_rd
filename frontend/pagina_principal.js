@@ -44,7 +44,7 @@ async function handleLogin() {
   const password = document.getElementById('loginPassword').value;
 
   try {
-    const res = await fetch('http://localhost:3000/api/login', {
+    const res = await fetch('http://localhost:4000/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
