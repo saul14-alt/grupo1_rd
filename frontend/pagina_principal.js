@@ -8,7 +8,7 @@ function cerrarModal() {
 }
 
 function abrirModal2() {
-  document.getElementById("modalLogin").style.display = "none";
+  cerrarModal(); // Cierra el primero
   document.getElementById("modal2Login").style.display = "flex";
 }
 
@@ -17,53 +17,54 @@ function cerrarModal2() {
 }
 
 // CERRAR MODALES AL HACER CLIC FUERA DE ELLOS
-window.onclick = function (e) {
+window.addEventListener("click", function (e) {
   const modal1 = document.getElementById("modalLogin");
   const modal2 = document.getElementById("modal2Login");
 
-  if (e.target === modal1) {
-    cerrarModal();
-  }
-
-  if (e.target === modal2) {
-    cerrarModal2();
-  }
-};
+  if (e.target === modal1) cerrarModal();
+  if (e.target === modal2) cerrarModal2();
+});
 
 // TOGGLE PARA MENU (si lo estás usando en tu nav)
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.querySelector('.menu');
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".menu");
 
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
+if (menuToggle && menu) {
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+}
 
 // FUNCIÓN DE LOGIN
 async function handleLogin() {
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  if (!email || !password) {
+    alert("⚠️ Por favor ingresa correo y contraseña.");
+    return;
+  }
 
   try {
-    const res = await fetch('http://localhost:4000/api/login', {
-      method: 'POST',
+    const res = await fetch("http://localhost:4000/api/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
 
     if (res.ok) {
-      alert('✅ Login exitoso');
-      // Puedes guardar el token si lo necesitas
-      // localStorage.setItem('token', data.token);
+      alert("✅ Login exitoso");
+      // localStorage.setItem('token', data.token); // Descomenta si usas token
       cerrarModal2();
     } else {
-      alert(data.message || '❌ Credenciales incorrectas');
+      alert(data.message || "❌ Usuario o contraseña incorrectos.");
     }
   } catch (err) {
-    console.error(err);
-    alert('⚠️ Error al conectar con el servidor');
+    console.error("Error al conectar con el backend:", err);
+    alert("⚠️ Error al conectar con el servidor");
   }
 }

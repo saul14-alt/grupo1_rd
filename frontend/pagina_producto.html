@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RD_Tecnology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="pagina_MOVILES.css">
+    <link rel="stylesheet" href="pagina_producto.css">
     <link rel="stylesheet" href="pagina_principal.js">
     <link rel="icon" href="imagenes/WhatsApp Image 2025-02-22 at 10.01.49 AM.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -66,9 +66,10 @@
                               <div class="derecha">
                                 <h2 class="crear-cuenta">Login</h2>
                                 <p><small></small></p>
-                                <input class="input" type="email" placeholder="email">
-                                <input class="input" type="password" placeholder="password">
-                                <button class="boton">ÚNETE</button>
+                                <input class="input" type="email" placeholder="email" id="loginEmail" />
+                                <input class="input" type="password" placeholder="password" id="loginPassword" />
+                                <button class="boton" onclick="handleLogin()">ENTRAR</button>
+                                
                               </div>
                             </div>
                             <span class="cerrar" onclick="cerrarModal2()">&times;</span>
@@ -124,166 +125,46 @@
             navbarContent.classList.toggle('active');
           });
         </script>
-        
-      
-
-
     </header>
-    <section class="banner" data-aos="fade-up">
-      <video autoplay muted loop playsinline class="video-banner">
-        <source src="videos/Galaxy S23 Series_ Unveiling _ Samsung(720P_HD).mp4" type="video/mp4">
-        Tu navegador no soporta videos HTML5.
-      </video>
+
+
+
+
+
+
     
-      <div class="content-banner">
-        <p>tecnologia al alcance de tus manos</p>
-        <h2>RD_Tecnology <br>calidad y precio</h2>
-        <a href="#">comprar ahora</a>
+
+
+    <div class="containerpro" data-aos="fade-up">
+        <div class="image-sectionpro">
+          <img id="product-image" src="imagenes/samsung1.jpeg" alt="Producto" />
+        </div>
+      
+        <div class="details-sectionpro">
+          <h1 id="product-name">Nombre del producto</h1>
+          <p class="pricepro" id="product-price">RD$ 0.00</p>
+          <p class="old-price" id="product-old-price"></p>
+          <p class="stockpro" id="product-stock">Sólo queda X unidades</p>
+      
+          <ul id="product-description"></ul>
+      
+          <div class="infopro">
+            <p><strong>Marca:</strong> <span id="brand"></span></p>
+            <p><strong>Modelo:</strong> <span id="model"></span></p>
+            <p><strong>Color:</strong> <span id="color"></span></p>
+            <p><strong>Almacenamiento:</strong> <span id="storage"></span></p>
+            <p><strong>Categoría:</strong> <span id="category"></span></p>
+          </div>
+      
+          <button class="buy-button">Añadir al carrito</button>
+        </div>
       </div>
-    </section>
+
+      
     
 
 
 
-  <!--producto1-->
-    <!--producto1-->
-      <!--producto1-->
-
-<div class="productos-venta" data-aos="fade-up">
-  
-  <div class="ofertas"data-aos="fade-up">
-        <h1 class="parrafo-ofertas">Ofertas </h1>
-    </div>
-    
-    
-        <div class="container-products1" data-aos="fade-up">
-            <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                    
-                </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                  <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3 > <a class="samsungpro" href="pagina_producto.html">Samsung</a></h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-            <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                    
-                  </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3>samsung</h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-          <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3>samsung</h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-              </div>
-          </div>
-            <!--producto1-->
-            <div class="card-product1"data-aos="fade-up">
-              <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                   
-                </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                  <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3>samsung</h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-          <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-              <img src="imagenes/samsung1.jpeg" alt="samsung1">
-              <span class="discount1">-10%</span>
-              <div class="button-group1">
-                    
-                  </div>
-                </div>
-                <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3>samsung</h3>
-                <span class="add-cart1">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-          </div>
-          
-          
-          
-            
-  <!--producto1-->
-    <!--producto1-->
-      <!--producto1-->
 
 
 
@@ -319,20 +200,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
@@ -354,9 +221,9 @@
     <!-- footer-->
 <!-- footer-->
 <!-- footer-->
-<footer class="footerc"  data-aos="fade-up">
-    <div class="footerc-top">
-      <div class="footerc-column">
+<footer class="footer"  data-aos="fade-up">
+    <div class="footer-top">
+      <div class="footer-column">
         <h4>Otras secciones</h4>
         <ul>
           <li><a href="#">Conócenos</a></li>
@@ -365,7 +232,7 @@
           <li><a href="#">Condiciones de Compra</a></li>
         </ul>
       </div>
-      <div class="footerc-column">
+      <div class="footer-column">
         <h4>¿Necesitas soporte?</h4>
         <ul>
           <li><a href="#">Soporte telefónico</a></li>
@@ -373,7 +240,7 @@
           <li><a href="#">Preguntas Frecuentes</a></li>
         </ul>
       </div>
-      <div class="footerc-column">
+      <div class="footer-column">
         <h4>Sitios Oficiales</h4>
         <ul>
           <li><a href="#">Samsung Costa Rica</a></li>
@@ -387,9 +254,9 @@
           <li><a href="#">Samsung Venezuela</a></li>
         </ul>
       </div>
-      <div class="footerc-column">
+      <div class="footer-column">
         <h4>Síguenos en:</h4>
-        <div class="socialc-icons">
+        <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-x-twitter"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -398,7 +265,7 @@
           <a href="#"><i class="fab fa-tiktok"></i></a>
           <a href="#"><i class="fas fa-at"></i></a>
         </div>
-        <div class="paymentc-methods">
+        <div class="payment-methods">
           <img src="img/visa.png" alt="Visa">
           <img src="img/mastercard.png" alt="Mastercard">
           <img src="img/amex.png" alt="American Express">
@@ -406,7 +273,7 @@
       </div>
     </div>
   
-    <div class="footerc-bottom">
+    <div class="footer-bottom">
       <p>Copyright© 1995–2025 SAMSUNG Todos los Derechos Reservados.</p>
       <p>Este sitio se ve mejor en las últimas versiones de Chrome, Edge, Safari y Mozilla Firefox.</p>
       <div class="footer-links">
@@ -422,13 +289,15 @@
 <!-- footer-->
 <!-- footer-->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
-    </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+
 
 
 
