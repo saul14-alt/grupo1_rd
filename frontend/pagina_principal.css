@@ -126,6 +126,7 @@ html{
     display: flex;
     align-items: center;
     gap: .5rem;
+    justify-content: center;
 }
 
 .container-logo i{

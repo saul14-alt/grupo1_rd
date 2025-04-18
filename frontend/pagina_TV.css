@@ -440,10 +440,15 @@ html{
 /*products*/
 
 .productos-venta{
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px; 
   gap: 2rem;
 }
 
 .container-products1 {
+  margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3rem;
@@ -528,6 +533,10 @@ html{
 }
 
 .content-card-product1{
+  margin-bottom: 20px;
+  margin-top :0px;
+  padding: 10px;
+  margin: 0px;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
@@ -651,14 +660,31 @@ html{
 
 
 
+.footerc {
+  position: static;
+  bottom: 100;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px; 
+  gap: 2rem;
+  position: fixed ;
+  position: sticky;
+  display: flex;
+  justify-content: space-between; /* o cualquier otro valor */
+  /* Puedes agregar más estilos generales aquí */
+}
 
 
 
 
-
-
-
-
+/* Para dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+  /* Estilos para dispositivos pequeños */
+  .imagen {
+    width: 100%;
+  }
+}
 
 
 
