@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
@@ -628,31 +627,10 @@ html {
 
 
 
-.footerc {
-  position: static;
-  bottom: 100;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-bottom: 0px; 
-  gap: 2rem;
-  position: fixed ;
-  position: sticky;
-  display: flex;
-  justify-content: space-between; /* o cualquier otro valor */
-  /* Puedes agregar más estilos generales aquí */
-}
 
 
 
 
-/* Para dispositivos pequeños (móviles) */
-@media (max-width: 768px) {
-  /* Estilos para dispositivos pequeños */
-  .imagen {
-    width: 100%;
-  }
-}
 
 
 
@@ -702,459 +680,350 @@ html {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* Modal fondo */
-   .modal-fondo {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease, visibility 1s ease;
-    
-
-    
-  }
-
-  /* Contenedor del modal */
-
-  .Bienvenidologin{
-    font-size: 3.5rem;
-    margin-top: -10rem;
-  }
-
-  .ingresa-tus-datos{
-    font-size: 1.5rem;
-    color: #000;
-  }
-.crear-cuenta{
-  font-size: 3rem;
-  text-align: center;
-  gap: 2rem;
-}
-
-  .modal {
-    width: 800px;
-    max-width: 95%;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal .izquierda {
-    background: var(--primary-color);
-    color: white;
-    padding: 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal .derecha {
-    flex: 1;
-    padding: 40px;
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal h2 {
-    margin-top: 0;
-  }
-
-  .input {
-    width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 10px;
-    background: #f1f1f1;
-  }
-
-  .boton {
-    width: 50%;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 8rem;
-    justify-content: center;
-  }
-
-  .boton-iniciar-secion{
-    width: 50%;
-    background: white;
-    color: var(--primary-color);
-    border: none;
-    padding: 12px;
-    margin-top: 16.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 2rem;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .cerrar {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 1200;
-  }
-
-  @media (max-width: 600px) {
-    .modal {
-      flex-direction: column;
-    }
-
-    .modal .izquierda, .modal .derecha {
-      padding: 20px;
-    }
-  }
-
-  /*modal login*/
-  .modal-fondo {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease, visibility 1s ease;
-    
-
-    
-  }
-
-  /* Contenedor del modal */
-
-  .Bienvenidologin{
-    font-size: 3.5rem;
-    margin-top: -10rem;
-  }
-
-  .ingresa-tus-datos{
-    font-size: 1.5rem;
-    color: #000;
-  }
-.crear-cuenta{
-  font-size: 3rem;
-  text-align: center;
-  gap: 2rem;
-}
-
-  .modal2 {
-    width: 800px;
-    max-width: 95%;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal2 .izquierda {
-    background: var(--primary-color);
-    color: white;
-    padding: 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal2 .derecha {
-    flex: 1;
-    padding: 40px;
-    transition: opacity 1s ease, visibility 1s ease;
-  }
-
-  .modal2 h2 {
-    margin-top: 0;
-  }
-
-  .input {
-    width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 10px;
-    background: #f1f1f1;
-  }
-
-  .boton {
-    width: 50%;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 8rem;
-    justify-content: center;
-  }
-
-  .boton-iniciar-secion{
-    width: 50%;
-    background: white;
-    color: var(--primary-color);
-    border: none;
-    padding: 12px;
-    margin-top: 16.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 2rem;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .cerrar {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 1200;
-  }
-
-  @media (max-width: 600px) {
-    .modal2 {
-      flex-direction: column;
-    }
-
-    .modal2 .izquierda, .modal2 .derecha {
-      padding: 20px;
-    }
-  }
-  /*modal login*/
-
-  /* fin del Contenedor del modal */
-
-
-
-
+/* Modal fondo */
+.modal-fondo {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
   
 
-  /*footer*/
+  
+}
+
+/* Contenedor del modal */
+
+.Bienvenidologin{
+  font-size: 3.5rem;
+  margin-top: -10rem;
+}
+
+.ingresa-tus-datos{
+  font-size: 1.5rem;
+  color: #000;
+}
+.crear-cuenta{
+font-size: 3rem;
+text-align: center;
+gap: 2rem;
+}
+
+.modal {
+  width: 800px;
+  max-width: 95%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal .izquierda {
+  background: var(--primary-color);
+  color: white;
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal .derecha {
+  flex: 1;
+  padding: 40px;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+.boton {
+  width: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 8rem;
+  justify-content: center;
+}
+
+.boton-iniciar-secion{
+  width: 50%;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 12px;
+  margin-top: 16.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    flex-direction: column;
+  }
+
+  .modal .izquierda, .modal .derecha {
+    padding: 20px;
+  }
+}
+
+/*modal login*/
+.modal-fondo {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
+  
+
+  
+}
+
+/* Contenedor del modal */
+
+.Bienvenidologin{
+  font-size: 3.5rem;
+  margin-top: -10rem;
+}
+
+.ingresa-tus-datos{
+  font-size: 1.5rem;
+  color: #000;
+}
+.crear-cuenta{
+font-size: 3rem;
+text-align: center;
+gap: 2rem;
+}
+
+.modal2 {
+  width: 800px;
+  max-width: 95%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal2 .izquierda {
+  background: var(--primary-color);
+  color: white;
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal2 .derecha {
+  flex: 1;
+  padding: 40px;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal2 h2 {
+  margin-top: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+.boton {
+  width: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 8rem;
+  justify-content: center;
+}
+
+.boton-iniciar-secion{
+  width: 50%;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 12px;
+  margin-top: 16.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+@media (max-width: 600px) {
+  .modal2 {
+    flex-direction: column;
+  }
+
+  .modal2 .izquierda, .modal2 .derecha {
+    padding: 20px;
+  }
+}
+/*modal login*/
+
+/* fin del Contenedor del modal */
+
+
+
+
+
+
+/*footer*/
 /*footer*/
 .footerc {
-    background-color: #f7f7f7;
-    font-family: 'Segoe UI', sans-serif;
-    padding: 40px 20px 20px 20px;
-    border-top: 1px solid #ccc;
-    color: #333;
-  }
-  
-  .footerc-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-  }
-  
-  .footerc-column {
-    flex: 1 1 200px;
-  }
-  
-  .footerc-column h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  
-  .footerc-column ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footerc-column ul li {
-    margin-bottom: 8px;
-  }
-  
-  .footerc-column ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-  }
-  
-  .footerc-column ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .socialc-icons a {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #000;
-  }
-  
-  .paymentc-methods img {
-    height: 30px;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  
-  .footerc-bottom {
-    text-align: center;
-    margin-top: 30px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-    font-size: 12px;
-  }
-  
-  .footerc-links {
-    margin-top: 10px;
-  }
-  
-  .footerc-links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .footerc-links a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px 20px 20px;
+  border-top: 1px solid #ccc;
+  color: #333;
+}
+
+.footerc-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footerc-column {
+  flex: 1 1 200px;
+}
+
+.footerc-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footerc-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerc-column ul li {
+  margin-bottom: 8px;
+}
+
+.footerc-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footerc-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.socialc-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #000;
+}
+
+.paymentc-methods img {
+  height: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.footerc-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.footerc-links {
+  margin-top: 10px;
+}
+
+.footerc-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.footerc-links a:hover {
+  text-decoration: underline;
+}
+
 
 
 
 /*fin del footer*/
 /*fin del footer*/
- 
 
-  
+
+
 
 
 
