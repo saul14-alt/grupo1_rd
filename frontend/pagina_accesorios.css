@@ -406,6 +406,15 @@ html {
 /*estilo de productos*/
 /*products*/
 
+.samsungpro{
+  color: #000;
+  text-decoration: none;
+}
+
+.samsungpro:hover{
+  color: var(--primary-color);
+}
+
 .productos-venta{
   gap: 2rem;
 }

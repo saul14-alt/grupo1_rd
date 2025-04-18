@@ -69,7 +69,27 @@ async function handleLogin() {
   }
 }
 
+//SCRIT DE LA MISMA PAGINA PARA TODOS LOS PRODUCTOS
 
- 
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+fetch(`http://localhost:4000/api/product/${productId}`)
+  .then(res => res.json())
+  .then(product => {
+    // Usas estos datos para llenar el HTML dinámicamente
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-description").textContent = product.description;
+    document.getElementById("product-img").src = product.imageURL;
+    // etc...
+  })
+  .catch(err => console.error("Error al cargar el producto:", err));
+
+  app.get("/api/product/:id", async (req, res) => {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+    res.json(product);
+  });
+  
 
 

@@ -301,6 +301,53 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id");
+
+    if (!productId) {
+      alert("Producto no especificado.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3000/api/products/${productId}`);
+      const product = await response.json();
+
+      // Mostrar en la página
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-price').textContent = `RD$ ${product.price}`;
+      document.getElementById('product-old-price').textContent = product.discount > 0 ? `RD$ ${(product.price + product.discount).toFixed(2)}` : '';
+      document.getElementById('product-stock').textContent = `Sólo queda ${product.stock} unidades`;
+      document.getElementById('product-description').innerHTML = `<li>${product.description}</li>`;
+      document.getElementById('brand').textContent = product.brand;
+      document.getElementById('model').textContent = product.model;
+      document.getElementById('color').textContent = product.color;
+      document.getElementById('storage').textContent = product.storage;
+      document.getElementById('category').textContent = product.category;
+      document.getElementById('product-image').src = product.imageURL;
+    } catch (error) {
+      console.error("Error al cargar el producto:", error);
+    }
+  });
+</script>
+
+
+
+
+
+
     
 </body>
 </html>

@@ -1142,13 +1142,13 @@ html {
   /*carrusel*/
   /*carrusel*/
 
-  .electrodomesticos{
+  .electrodomesticos {
     text-align: center;
     margin: 4rem 0;
     position: relative;
   }
-
-  .electro{
+  
+  .electro {
     font-size: 4rem;
     font-weight: 800;
     color: #111;
@@ -1158,41 +1158,41 @@ html {
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
   }
-
-  .electro::after{
+  
+  .electro::after {
     content: '';
-  width: 60%;
-  height: 4px;
-  background-color: var(--dark-color);
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  border-radius: 10px;
-  animation: slideInLine 1s ease forwards;
+    width: 60%;
+    height: 4px;
+    background-color: var(--dark-color);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    animation: slideInLine 1s ease forwards;
   }
- 
+  
   .containercr {
     display: flex;
     height: 65vh;
-    
   }
-
+  
   .carousel {
     width: 50%;
-    background-image: linear-gradient(#00000080,#00000080), url(imagenes/galaxy_S.jpg);
+    background-image: linear-gradient(#00000080, #00000080), url(imagenes/galaxy_S.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    
   }
+  
   .carousel img {
     border-radius: 12px;
-    transition: opacity 0.5s ease-in-out; 
+    transition: opacity 0.5s ease-in-out;
     opacity: 1;
     width: 100%;
   }
+  
   .info {
     width: 50%;
     padding: 40px;
@@ -1203,29 +1203,32 @@ html {
     font-size: 1.5rem;
     text-align: center;
   }
+  
   .info h2 {
     margin-top: -3rem;
     gap: 4rem;
     font-size: 3rem;
     text-align: center;
   }
+  
   .btn {
     margin-top: 20px;
     padding: 15px;
     background-color: #699fc3;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 3rem;
     cursor: pointer;
     width: 200px;
-    border-radius: 3rem;
-    border: #000;
     font-size: 1.5rem;
     margin-left: 15rem;
+    border: #000;
   }
+  
   .btn:hover {
     background-color: #060606;
   }
+  
   .controls {
     position: absolute;
     top: 50%;
@@ -1234,15 +1237,47 @@ html {
     justify-content: space-between;
     transform: translateY(-50%);
   }
+  
   .controls button {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: 10%;
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
-
   }
+  
+  /* 🔽 Responsive para pantallas menores a 768px */
+  @media screen and (max-width: 768px) {
+    .containercr {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .carousel,
+    .info {
+      width: 100%;
+    }
+  
+    .info {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+  
+    .info h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+  
+    .btn {
+      margin: 20px auto 0;
+      font-size: 1.2rem;
+      width: 50%;
+      
+    }
+  }
+  
+  
 
  /*fin del carrusel*/
  /*fin del carrusel*/

@@ -306,48 +306,52 @@
     <div class="info">
       <h2 id="infoTitle">Utensilios Para La cocina</h2>
       <p id="infoText">Los electrodomésticos de Samsung incluyen lavadoras, secadoras, lavavajillas y refrigeradoras.</p>
-      <button class="btn">Ver más</button>
+      <button id="button" class="btn">Ver más</button>
     </div>
   </div>
   
   <script>
     const images = [
-      {
-        src: "imagenes/electrodomesticos_cocina.jpg",
-        title: "Utensilios Para La cocina",
-        text: "Las neveras Samsung se destacan por su innovación, diseño moderno y tecnología de punta. "
-      },
-      {
-        src: "imagenes/electrodomesticos_limpieza.jpg",
-        title: "Utensilios Para La Limpieza",
-        text: "Samsung ofrece una variedad de electrodomésticos para la limpieza, incluyendo lavadoras, aspiradoras y robots aspiradores. "
-      },
-      {
-        src: "imagenes/electrodomesticos_tv.jpg",
-        title: "Una Gran Variedad de Smart TV",
-        text: "Un Smart TV de Samsung es un televisor conectado a internet que ofrece una amplia variedad de contenido y aplicaciones. "
-      }
-    ];
-  
-    let currentIndex = 0;
-  
-    function changeSlide(direction) {
-  const img = document.getElementById('carouselImage');
-  
-  // Desvanece la imagen actual
-  img.style.opacity = 0;
+  {
+    src: "imagenes/electrodomesticos_cocina.jpg",
+    title: "Utensilios Para La cocina",
+    text: "Las neveras Samsung se destacan por su innovación, diseño moderno y tecnología de punta. ",
+    link: "pagina_electrodomesticos.html"
+  },
+  {
+    src: "imagenes/electrodomesticos_limpieza.jpg",
+    title: "Utensilios Para La Limpieza",
+    text: "Samsung ofrece una variedad de electrodomésticos para la limpieza, incluyendo lavadoras, aspiradoras y robots aspiradores. ",
+    link: "pagina_electrodomesticos.html"
+  },
+  {
+    src: "imagenes/electrodomesticos_tv.jpg",
+    title: "Una Gran Variedad de Smart TV",
+    text: "Un Smart TV de Samsung es un televisor conectado a internet que ofrece una amplia variedad de contenido y aplicaciones. ",
+    link: "pagina_TV.html"
+  }
+];
 
-  // Espera a que se desvanezca antes de cambiar
-  setTimeout(() => {
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    img.src = images[currentIndex].src;
-    document.getElementById('infoTitle').innerText = images[currentIndex].title;
-    document.getElementById('infoText').innerText = images[currentIndex].text;
+let currentIndex = 0;
 
-    // Aparece suavemente la nueva imagen
-    img.style.opacity = 1;
-  }, 300); // espera un poco antes de cambiar (coincide con el transition)
+function changeSlide(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  const current = images[currentIndex];
+  document.getElementById("carouselImage").src = current.src;
+  document.getElementById("infoTitle").textContent = current.title;
+  document.getElementById("infoText").textContent = current.text;
+  document.getElementById("button").onclick = function () {
+    window.location.href = current.link;
+  };
 }
+
+// Inicializar botón con la primera imagen
+document.getElementById("button").onclick = function () {
+  window.location.href = images[0].link;
+};
 
   </script>
 
