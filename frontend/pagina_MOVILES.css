@@ -10,6 +10,7 @@
 html {
     font-size: 62.5%;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -408,11 +409,25 @@ html {
 /*estilo de productos*/
 /*products*/
 
+.samsungpro{
+  color: #000;
+  text-decoration: none;
+}
+
+.samsungpro:hover{
+  color: var(--primary-color);
+}
+
 .productos-venta{
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px; 
   gap: 2rem;
 }
 
 .container-products1 {
+  margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3rem;
@@ -430,7 +445,7 @@ html {
     transform: scale(1.05);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
-  
+
 .container-img1{
     position: relative;
 }
@@ -497,6 +512,10 @@ html {
 }
 
 .content-card-product1{
+  margin-bottom: 20px;
+  margin-top :0px;
+  padding: 10px;
+  margin: 0px;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
@@ -526,15 +545,6 @@ html {
 
 .content-card-product1 h3:hover{
     color: var(--primary-color);
-}
-
-.samsungpro{
-  color: #000;
-  text-decoration: none;
-}
-
-.samsungpro:hover{
-  color: var(--primary-color);
 }
 
 .add-cart1{
@@ -616,7 +626,6 @@ html {
   border-radius: 10px;
   animation: slideInLine 1s ease forwards;
 }
-
 
 
 

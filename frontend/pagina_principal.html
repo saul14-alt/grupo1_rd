@@ -257,17 +257,17 @@
                 <h1 class="mejores-categorias">Smartphone Galaxy</h1>
             </div>
             <div class="container-categories">
-              <div class="card-category category-moca" data-aos="fade-up" data-aos-delay="100">
+              <div  class="card-category category-moca" data-aos="fade-up" data-aos-delay="100">
                     <p>Galaxy S</p>
-                    <span><button class="ver-mas"> ver mas</button></span>
+                    <span> <form action="pagina_MOVILES.html#Galaxy-S"><button   class="ver-mas"> ver mas </button></form></span>
                 </div>
                 <div class="card-category category-capuchino" data-aos="fade-up" data-aos-delay="200">
                     <p>Galaxy Z</p>
-                    <span><button class="ver-mas"> ver mas</button></span>
+                    <span><form action="pagina_MOVILES.html#Galaxy-Z"><button class="ver-mas"> ver mas </button></form></span>
                 </div>
                 <div class="card-category category-expreso" data-aos="fade-up" data-aos-delay="300">
                     <p>Galaxy A</p>
-                    <span><button class="ver-mas"> ver mas</button></span>
+                    <span> <form action="pagina_MOVILES.html#Galaxy-A"><button class="ver-mas"> ver mas</button></form></span>
                 </div>
             </div>        
         </section>
@@ -312,48 +312,66 @@
   
   <script>
     const images = [
-  {
-    src: "imagenes/electrodomesticos_cocina.jpg",
-    title: "Utensilios Para La cocina",
-    text: "Las neveras Samsung se destacan por su innovación, diseño moderno y tecnología de punta. ",
-    link: "pagina_electrodomesticos.html"
-  },
-  {
-    src: "imagenes/electrodomesticos_limpieza.jpg",
-    title: "Utensilios Para La Limpieza",
-    text: "Samsung ofrece una variedad de electrodomésticos para la limpieza, incluyendo lavadoras, aspiradoras y robots aspiradores. ",
-    link: "pagina_electrodomesticos.html"
-  },
-  {
-    src: "imagenes/electrodomesticos_tv.jpg",
-    title: "Una Gran Variedad de Smart TV",
-    text: "Un Smart TV de Samsung es un televisor conectado a internet que ofrece una amplia variedad de contenido y aplicaciones. ",
-    link: "pagina_TV.html"
-  }
-];
-
-let currentIndex = 0;
-
-function changeSlide(direction) {
-  currentIndex += direction;
-  if (currentIndex < 0) currentIndex = images.length - 1;
-  if (currentIndex >= images.length) currentIndex = 0;
-
-  const current = images[currentIndex];
-  document.getElementById("carouselImage").src = current.src;
-  document.getElementById("infoTitle").textContent = current.title;
-  document.getElementById("infoText").textContent = current.text;
-  document.getElementById("button").onclick = function () {
-    window.location.href = current.link;
-  };
-}
-
-// Inicializar botón con la primera imagen
-document.getElementById("button").onclick = function () {
-  window.location.href = images[0].link;
-};
-
+      {
+        src: "imagenes/electrodomesticos_cocina.jpg",
+        title: "Utensilios Para La cocina",
+        text: "Las neveras Samsung se destacan por su innovación, diseño moderno y tecnología de punta. ",
+        link: "pagina_electrodomesticos.html"
+      },
+      {
+        src: "imagenes/electrodomesticos_limpieza.jpg",
+        title: "Utensilios Para La Limpieza",
+        text: "Samsung ofrece una variedad de electrodomésticos para la limpieza, incluyendo lavadoras, aspiradoras y robots aspiradores. ",
+        link: "pagina_electrodomesticos.html"
+      },
+      {
+        src: "imagenes/electrodomesticos_tv.jpg",
+        title: "Una Gran Variedad de Smart TV",
+        text: "Un Smart TV de Samsung es un televisor conectado a internet que ofrece una amplia variedad de contenido y aplicaciones. ",
+        link: "pagina_TV.html"
+      }
+    ];
+  
+    let currentIndex = 0;
+  
+    const img = document.getElementById("carouselImage");
+    const title = document.getElementById("infoTitle");
+    const text = document.getElementById("infoText");
+    const button = document.getElementById("button");
+  
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+  
+      const current = images[currentIndex];
+  
+      // Quitar clases para reiniciar animaciones
+      img.classList.remove("show");
+      title.classList.remove("show");
+      text.classList.remove("show");
+  
+      // Delay para animar después del cambio
+      setTimeout(() => {
+        img.src = current.src;
+        title.textContent = current.title;
+        text.textContent = current.text;
+        button.onclick = () => window.location.href = current.link;
+  
+        // Activar animación
+        img.classList.add("show");
+        title.classList.add("show");
+        text.classList.add("show");
+      }, 100); // Esperar 100ms para reiniciar la animación
+    }
+  
+    // Inicializar
+    img.classList.add("show");
+    title.classList.add("show");
+    text.classList.add("show");
+    button.onclick = () => window.location.href = images[0].link;
   </script>
+  
 
 <!-- fin del carrusel-->
 <!-- fin del carrusel-->

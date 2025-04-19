@@ -1189,8 +1189,25 @@ html {
   .carousel img {
     border-radius: 12px;
     transition: opacity 0.5s ease-in-out;
-    opacity: 1;
     width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+  }
+
+  .carousel img.show {
+    opacity: 1;
+  }
+  
+  .info h2, .info p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .info h2.show, .info p.show {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .info {
