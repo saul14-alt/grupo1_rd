@@ -346,6 +346,55 @@ html {
 
 
 
+
+
+.add-cart1 {
+  justify-self: start;
+  border: 2px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-cart1 i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: transform 0.4s ease;
+}
+
+.add-cart1:hover {
+  background-color: var(--primary-color);
+  animation: bounceRotate 0.6s ease;
+}
+
+.add-cart1:hover i {
+  color: white;
+  transform: scale(1.2); /* Quitamos el rotate(20deg) */
+}
+
+@keyframes bounceRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.15) rotate(10deg);
+  }
+  60% {
+    transform: scale(0.97) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+
+
+
+
 /*descripcion de los productos*/
 /*descripcion de los productos*/
 /*descripcion de los productos*/
@@ -419,8 +468,19 @@ html {
   }
 
   .infopro p {
-    margin: 6px 0;
-    font-size: 15px;
+   
+    margin: 12px 0; /* Más espacio entre líneas */
+    font-size: 16px; 
+  }
+
+  .buy-button, .details-sectionpro .buy-icon {
+    margin-top: 50px; /* Baja el botón o ícono de compra */
+  }
+
+  .buy-icon {
+    margin-top: 50px;
+    display: flex;
+    justify-content: start;
   }
 
   .infopro span {
@@ -459,6 +519,10 @@ html {
     .details-sectionpro {
       padding: 30px 20px;
     }
+  }
+
+  .description{
+    font-size: 1.5;
   }
 
 /*descripcion de los productos*/

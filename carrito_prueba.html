@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RD_Tecnology</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos para el carrito y el mensaje de éxito */
+    .success-message {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    .content-shoping-cart {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .content-shoping-cart i {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+
+    .cart-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .cart-item img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .cart-item button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cart-item button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contador del carrito en el header -->
+  <header>
+    <div class="content-shoping-cart" onclick="showCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count">0</span> <!-- Contador del carrito -->
+    </div>
+  </header>
+
+  <!-- Productos -->
+  <section class="productos">
+    <div class="product-card">
+      <img src="producto1.jpg" alt="Producto 1" class="product-img">
+      <h3>Producto 1</h3>
+      <p>$100</p>
+      <button class="add-to-cart" data-id="1" data-name="Producto 1" data-price="100" data-image="producto1.jpg">Agregar al carrito</button>
+    </div>
+    <div class="product-card">
+      <img src="producto2.jpg" alt="Producto 2" class="product-img">
+      <h3>Producto 2</h3>
+      <p>$200</p>
+      <button class="add-to-cart" data-id="2" data-name="Producto 2" data-price="200" data-image="producto2.jpg">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <!-- Carrito (para ver los productos añadidos) -->
+  <div id="cart-modal" style="display: none;">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+    <button onclick="closeCart()">Cerrar carrito</button>
+  </div>
+
+  <script>
+    // Función para actualizar el contador del carrito
+    function updateCartCounter() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    // Función para mostrar el mensaje de éxito
+    function showSuccessMessage(message) {
+      const messageBox = document.createElement('div');
+      messageBox.textContent = message;
+      messageBox.classList.add('success-message');
+      document.body.appendChild(messageBox);
+
+      // Establecemos un temporizador para quitar el mensaje después de 3 segundos
+      setTimeout(() => {
+        messageBox.remove();
+      }, 3000);
+    }
+
+    // Función para agregar productos al carrito
+    function addToCart(event) {
+      const product = {
+        id: event.target.getAttribute('data-id'),
+        name: event.target.getAttribute('data-name'),
+        price: event.target.getAttribute('data-price'),
+        image: event.target.getAttribute('data-image')
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      updateCartCounter(); // Actualizamos el contador
+
+      showSuccessMessage('Producto añadido al carrito');
+    }
+
+    // Función para eliminar un producto del carrito
+    function removeFromCart(productId) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.id !== productId); // Filtramos el producto que queremos eliminar
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      updateCartCounter(); // Actualizamos el contador
+
+      showSuccessMessage('Producto eliminado del carrito');
+      showCart(); // Actualizamos el carrito visualmente
+    }
+
+    // Función para mostrar el carrito
+    function showCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = ''; // Limpiamos el carrito antes de mostrarlo
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<li>No hay productos en el carrito</li>';
+      } else {
+        cart.forEach(item => {
+          const li = document.createElement('li');
+          li.classList.add('cart-item');
+          li.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <strong>${item.name}</strong> - $${item.price}
+            <button onclick="removeFromCart('${item.id}')">Eliminar</button>
+          `;
+          cartItemsContainer.appendChild(li);
+        });
+      }
+
+      document.getElementById('cart-modal').style.display = 'block';
+    }
+
+    // Función para cerrar el carrito
+    function closeCart() {
+      document.getElementById('cart-modal').style.display = 'none';
+    }
+
+    // Inicializar los botones de agregar al carrito
+    function initializeCartButtons() {
+      const buttons = document.querySelectorAll('.add-to-cart');
+      buttons.forEach(button => {
+        button.addEventListener('click', addToCart);
+      });
+    }
+
+    // Cuando la página cargue, inicializamos los botones y el contador
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCounter();
+      initializeCartButtons();
+    });
+  </script>
+
+</body>
+</html>

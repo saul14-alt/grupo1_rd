@@ -34,7 +34,7 @@
                     <div class="container-user"  >
                         <!-- Icono de login -->
 
-                        <i class="fas fa-user login-icon" onclick="abrirModal()"  ></i>
+                        <i class="fas fa-user login-icon" onclick=abrirModal()  ></i>
 
                         <!-- modal -->
                         <div id="modalLogin" class="modal-fondo"  data-aos="fade-up" >
@@ -57,7 +57,7 @@
                             <span class="cerrar" onclick="cerrarModal()">&times;</span>
                           </div>
                           <!-- inventando-->
-                        <div id="modal2Login" class="modal-fondo"  data-aos="fade-up" >
+                          <div id="modal2Login" class="modal-fondo"  data-aos="fade-up" >
                             <div class="modal2">
                               <div class="izquierda">
                                 <h2 class="Bienvenidologin">MMG</h2>
@@ -68,21 +68,19 @@
                                 <h2 class="crear-cuenta">Login</h2>
                                 <p><small></small></p>
                                 <input class="input" type="email" placeholder="email" id="loginEmail" />
-                                <input class="input" type="password" placeholder="password" id="loginPassword" />
-                                <button class="boton" onclick="handleLogin()">ENTRAR</button>
-                                
+                                <input class="input" type="password" placeholder="password" id="loginPassword">
+                                <button class="boton" onclick="handleLogin()">ÚNETE</button>
                               </div>
                             </div>
                             <span class="cerrar" onclick="cerrarModal2()">&times;</span>
                           </div>
-                          <script src="pagina_principal.js"></script>
+
                            <!-- inventando-->
                           
 
 
 
 
-                          <script src="pagina_principal.js"></script>
                           <script>
                             async function handleRegister() {
                               const name = document.getElementById('registerName').value;
@@ -115,6 +113,65 @@
 
                           </script>
 
+                          <script>
+                        async function handleLogin() {
+                          const email = document.getElementById("loginEmail").value.trim();
+                          const password = document.getElementById("loginPassword").value.trim();
+
+                          if (!email || !password) {
+                            alert("⚠️ Por favor ingresa correo y contraseña.");
+                            return;
+                          }
+
+                          try {
+                            const res = await fetch("http://localhost:4000/api/login", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify({ email, password }),
+                            });
+
+                            const data = await res.json();
+
+                            if (res.ok) {
+                              alert("✅ Login exitoso");
+                              cerrarModal2();
+                            } else {
+                              alert(data.message || "❌ Usuario o contraseña incorrectos.");
+                            }
+                          } catch (err) {
+                            console.error("Error al conectar con el backend:", err);
+                            alert("⚠️ Error al conectar con el servidor");
+                          }
+                        }
+                          </script>
+
+                            <script>
+                              function abrirModal() {
+                                document.getElementById("modalLogin").style.display = "flex";
+                              }
+
+                              function cerrarModal() {
+                                document.getElementById("modalLogin").style.display = "none";
+                              }
+
+                              function abrirModal2() {
+                                cerrarModal(); 
+                                document.getElementById("modal2Login").style.display = "flex";
+                              }
+
+                              function cerrarModal2() {
+                                document.getElementById("modal2Login").style.display = "none";
+                              }
+
+                              window.addEventListener("click", function (e) {
+                                if (e.target === document.getElementById("modalLogin")) cerrarModal();
+                                if (e.target === document.getElementById("modal2Login")) cerrarModal2();
+                              });
+
+                            </script>
+
                         <!-- final del modal -->
 
 
@@ -136,14 +193,17 @@
                     <li><a href="pagina_TV.html">TV</a></li>
                     <li><a href="pagina_accesorios.html">Accesorios</a></li>
                     <li><a href="pagina_electrodomesticos.html">Electrodomesticos</a></li>
-                    <li><a href="pagina_principal.html">Todo</a></li>
+                    
                 </ul>                
-                  <div class="search-form">
-                      <input type="search" placeholder="Buscar...">
-                      <button class="btn-search">
-                          <i class="fa-solid fa-magnifying-glass"></i>
-                      </button>
-                  </div>
+                <div class="search-form">
+                  <input type="search" id="search-input" placeholder="Buscar..." />
+                  <button class="btn-search" id="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+                
+                <!-- Donde se mostrarán los resultados de búsqueda -->
+                <div id="search-results" class="search-results"></div>
               </nav>
           </div>
             </div>
@@ -186,43 +246,48 @@
     <h1 class="nuevos">Nuevos En El Mercado</h1>
 </div>
 
-    <div class="contenedor">
-      <div class="section watch" data-aos="fade-right">
-          <div class="title">Galaxy S25 Ultra</div>
-          <div class="subtitle">Galaxy S</div>
-          <div class="subtitle">Tecnología de pantalla: Dynamic AMOLED.</div>
-          <button class="button">Más información</button>
-          
-        </div>
-      
-        <div class="section ipad" data-aos="fade-left">
-          <div class="title">Galaxy Z Fold6<span style="color: var(#6699b3);"></span></div>
-          <div class="subtitle">Galaxy Z</div>
-          <div class="subtitle" style="font-size: 16px; color: white;">Sistema operativo. OneUI 6.1, Android 14.</div>
-          <button class="button">Más información</button>
-          
-        </div>
-      </div>
-     
-      <div class="separacion-nuevos"></div>
+<div class="contenedor">
+  <div class="section watch" data-aos="fade-right">
+    <div class="title">Galaxy S25 Ultra</div>
+    <div class="subtitle">Galaxy S</div>
+    <div class="subtitle">Tecnología de pantalla: Dynamic AMOLED.</div>
+    <a href="pagina_producto.html?id=68046326f8150427681acc32">
+      <button class="button">Más información</button>
+    </a>
+  </div>
 
-    <div class="contenedor">
-      <div class="section watch1" data-aos="fade-right">
-          <div class="title">Samsung Galaxy Ring</div>
-          <div class="subtitle">Galaxy Ring</div>
-          <div class="subtitle">ofrecen diferentes funciones para seguir de cerca tu salud y tu forma física.</div>
-          <button class="button">Más información</button>
-          
-        </div>
-      
-        <div class="section ipad1" data-aos="fade-left">
-          <div class="title">Galaxy Watch 8<span style="color: var(#6699b3);"></span></div>
-          <div class="subtitle">Samsung</div>
-          <div class="subtitle" style="font-size: 16px; color: white;">Batería de gran capacidad de 450 mAh, 45 días de uso diario..</div>
-          <button class="button">Más información</button>
-          
-        </div>
-      </div>
+  <div class="section ipad" data-aos="fade-left">
+    <div class="title">Galaxy Z Fold6<span style="color: var(#6699b3);"></span></div>
+    <div class="subtitle">Galaxy Z</div>
+    <div class="subtitle" style="font-size: 16px; color: white;">Sistema operativo. OneUI 6.1, Android 14.</div>
+    <a href="pagina_producto.html?id=68055778f8150427681ad1dc">
+      <button class="button">Más información</button>
+    </a>
+  </div>
+</div>
+
+<div class="separacion-nuevos"></div>
+
+<div class="contenedor">
+  <div class="section watch1" data-aos="fade-right">
+    <div class="title">Samsung Galaxy Ring</div>
+    <div class="subtitle">Galaxy Ring</div>
+    <div class="subtitle">Ofrecen diferentes funciones para seguir de cerca tu salud y tu forma física.</div>
+    <a href="pagina_producto.html?id=6804d91df8150427681accbf">
+      <button class="button">Más información</button>
+    </a>
+  </div>
+
+  <div class="section ipad1" data-aos="fade-left">
+    <div class="title">Galaxy Watch 8<span style="color: var(#6699b3);"></span></div>
+    <div class="subtitle">Samsung</div>
+    <div class="subtitle" style="font-size: 16px; color: white;">Batería de gran capacidad de 450 mAh, 45 días de uso diario.</div>
+    <a href="pagina_producto.html?id=6804d8a7f8150427681accbd">
+      <button class="button">Más información</button>
+    </a>
+  </div>
+</div>
+
 
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
@@ -253,23 +318,40 @@
     <main class="content">
         </section>
         <section class="topcategirias" data-aos="fade-up">
-            <div class="mejores">
-                <h1 class="mejores-categorias">Smartphone Galaxy</h1>
+          <div class="mejores">
+            <h1 class="mejores-categorias">Smartphone Galaxy</h1>
+          </div>
+          
+          <div class="container-categories">
+            <div class="card-category category-moca" data-aos="fade-up" data-aos-delay="100">
+              <p>Galaxy S</p>
+              <span>
+                <a href="pagina_MOVILES.html#GalaS">
+                  <button class="ver-mas">ver más</button>
+                </a>
+              </span>
             </div>
-            <div class="container-categories">
-              <div  class="card-category category-moca" data-aos="fade-up" data-aos-delay="100">
-                    <p>Galaxy S</p>
-                    <span> <form action="pagina_MOVILES.html#Galaxy-S"><button   class="ver-mas"> ver mas </button></form></span>
-                </div>
-                <div class="card-category category-capuchino" data-aos="fade-up" data-aos-delay="200">
-                    <p>Galaxy Z</p>
-                    <span><form action="pagina_MOVILES.html#Galaxy-Z"><button class="ver-mas"> ver mas </button></form></span>
-                </div>
-                <div class="card-category category-expreso" data-aos="fade-up" data-aos-delay="300">
-                    <p>Galaxy A</p>
-                    <span> <form action="pagina_MOVILES.html#Galaxy-A"><button class="ver-mas"> ver mas</button></form></span>
-                </div>
-            </div>        
+          
+            <div class="card-category category-capuchino" data-aos="fade-up" data-aos-delay="200">
+              <p>Galaxy Z</p>
+              <span>
+                <a href="pagina_MOVILES.html#GalaZ">
+                  <button class="ver-mas">ver más</button>
+                </a>
+              </span>
+            </div>
+          
+            <div class="card-category category-expreso" data-aos="fade-up" data-aos-delay="300">
+              <p>Galaxy A</p>
+              <span>
+              </a>
+              <a href="pagina_MOVILES.html#GalaA">
+                <button class="ver-mas">ver más</button>
+              </a>
+              </span>
+            </div>
+          </div>
+              
         </section>
         </section>
 
@@ -316,13 +398,13 @@
         src: "imagenes/electrodomesticos_cocina.jpg",
         title: "Utensilios Para La cocina",
         text: "Las neveras Samsung se destacan por su innovación, diseño moderno y tecnología de punta. ",
-        link: "pagina_electrodomesticos.html"
+        link: "pagina_electrodomesticos.html#Coci"
       },
       {
         src: "imagenes/electrodomesticos_limpieza.jpg",
         title: "Utensilios Para La Limpieza",
         text: "Samsung ofrece una variedad de electrodomésticos para la limpieza, incluyendo lavadoras, aspiradoras y robots aspiradores. ",
-        link: "pagina_electrodomesticos.html"
+        link: "pagina_electrodomesticos.html#Limp"
       },
       {
         src: "imagenes/electrodomesticos_tv.jpg",
@@ -371,6 +453,8 @@
     text.classList.add("show");
     button.onclick = () => window.location.href = images[0].link;
   </script>
+
+  
   
 
 <!-- fin del carrusel-->

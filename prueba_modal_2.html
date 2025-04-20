@@ -1,152 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Modal Estilo Registro</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modal Login/Register</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
     }
 
-    /* Icono de login */
     .login-icon {
-      font-size: 28px;
+      font-size: 2rem;
       cursor: pointer;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1100;
-      color: #5e2ce8;
+      margin: 2rem;
     }
 
-    /* Fondo del modal */
     .modal-fondo {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.4);
-      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
+      z-index: 9999;
     }
 
-    .modal {
-      background-color: #fff;
-      display: flex;
+    .modal, .modal2 {
       width: 800px;
       max-width: 95%;
+      background: white;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: flex;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
-    .izquierda {
-      flex: 1;
-      background-color: #5e2ce8;
+    .modal .izquierda, .modal2 .izquierda {
+      background: #4a90e2;
       color: white;
       padding: 40px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
 
-    .derecha {
+    .modal .derecha, .modal2 .derecha {
       flex: 1;
       padding: 40px;
-      background-color: white;
     }
 
-    .derecha h2 {
-      margin-top: 0;
-    }
-
-    input {
+    .input {
       width: 100%;
-      padding: 12px;
+      padding: 12px 15px;
       margin: 10px 0;
       border: none;
-      background-color: #f1f1f1;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 10px;
+      background: #f1f1f1;
     }
 
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #5e2ce8;
+    .boton, .boton-iniciar-secion {
+      background: #4a90e2;
       color: white;
       border: none;
-      border-radius: 25px;
-      font-size: 16px;
+      padding: 12px;
+      border-radius: 30px;
       font-weight: bold;
       cursor: pointer;
+      width: 100%;
       margin-top: 10px;
     }
 
     .cerrar {
       position: absolute;
-      top: 20px;
-      right: 25px;
-      font-size: 30px;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
       color: white;
       cursor: pointer;
-      z-index: 1200;
-    }
-
-    @media (max-width: 600px) {
-      .modal {
-        flex-direction: column;
-      }
-
-      .izquierda, .derecha {
-        padding: 20px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ícono de login -->
-  <i class="fas fa-user login-icon" onclick="abrirModal()"></i>
+  <i class="fas fa-user login-icon" onclick="abrirModal()">👤</i>
 
-  <!-- Modal -->
+  <!-- Modal Registro -->
   <div id="modalLogin" class="modal-fondo">
     <div class="modal">
       <div class="izquierda">
         <h2>Bienvenido</h2>
-        <p>Introduce tus datos para crear una cuenta</p>
+        <p>Ingresa tus datos para registrarte</p>
+        <button class="boton-iniciar-secion" onclick="abrirModal2()">Ir a Login</button>
       </div>
       <div class="derecha">
-        <h2>Crear una cuenta</h2>
-        <p><small>o usa tu correo electrónico</small></p>
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Correo electrónico">
-        <input type="password" placeholder="Contraseña">
-        <button>ÚNETE</button>
+        <h2>Crear Cuenta</h2>
+        <input class="input" type="text" placeholder="Nombre" id="registerName">
+        <input class="input" type="email" placeholder="Email" id="registerEmail">
+        <input class="input" type="password" placeholder="Password" id="registerPassword">
+        <button class="boton" onclick="handleRegister()">ÚNETE</button>
       </div>
     </div>
     <span class="cerrar" onclick="cerrarModal()">&times;</span>
   </div>
 
+  <!-- Modal Login -->
+  <div id="modal2Login" class="modal-fondo">
+    <div class="modal2">
+      <div class="izquierda">
+        <h2>Hola otra vez</h2>
+        <p>Ingresa tus datos para login</p>
+      </div>
+      <div class="derecha">
+        <h2>Login</h2>
+        <input class="input" type="email" placeholder="Email" id="loginEmail">
+        <input class="input" type="password" placeholder="Password" id="loginPassword">
+        <button class="boton" onclick="handleLogin()">ENTRAR</button>
+      </div>
+    </div>
+    <span class="cerrar" onclick="cerrarModal2()">&times;</span>
+  </div>
+
+  <!-- Scripts -->
   <script>
     function abrirModal() {
-      document.getElementById('modalLogin').style.display = 'flex';
+      document.getElementById("modalLogin").style.display = "flex";
     }
 
     function cerrarModal() {
-      document.getElementById('modalLogin').style.display = 'none';
+      document.getElementById("modalLogin").style.display = "none";
     }
 
-    // Cierra si haces clic fuera del modal
-    window.onclick = function(e) {
-      const modal = document.getElementById('modalLogin');
-      if (e.target === modal) {
-        cerrarModal();
-      }
+    function abrirModal2() {
+      cerrarModal(); // cierra el anterior
+      document.getElementById("modal2Login").style.display = "flex";
+    }
+
+    function cerrarModal2() {
+      document.getElementById("modal2Login").style.display = "none";
+    }
+
+    window.addEventListener("click", function (e) {
+      if (e.target === document.getElementById("modalLogin")) cerrarModal();
+      if (e.target === document.getElementById("modal2Login")) cerrarModal2();
+    });
+
+    function handleRegister() {
+      alert("Simulación de registro");
+      cerrarModal();
+      abrirModal2();
+    }
+
+    function handleLogin() {
+      alert("Simulación de login");
+      cerrarModal2();
     }
   </script>
 

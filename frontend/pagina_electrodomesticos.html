@@ -14,121 +14,214 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <header >
-        <div class="estatico" >
+  <header >
+    <div class="estatico" >
 
-            <div class="container-hero" >
-                <div class="container hero" >
-                    <div class="custoner-support">
-                        <img src="imagenes/WhatsApp Image 2025-02-22 at 10.01.49 AM.ico" width="50" alt="" class="imacon">
-                        <div class="content-custoner-support">
-                            <span class="text">soporte al cliente</span>  
-                            <span class="number">4748398</span> 
-                        </div>  
-                    </div> 
-                    <div class="container-logo">
-                        <link rel="stylesheet" href="">
-                        <h1 class="logo"><a href="/">RD_Tecnology</a></h1>
-                    </div>
-                    
-                    <div class="container-user"  >
-                        <!-- Icono de login -->
-
-                        <i class="fas fa-user login-icon" onclick="abrirModal()"  ></i>
-
-                        <!-- modal -->
-                        <div id="modalLogin" class="modal-fondo"  data-aos="fade-up" >
-                            <div class="modal">
-                              <div class="izquierda">
-                                <h2 class="Bienvenidologin">Bienvenido</h2>
-                                <p class="ingresa-tus-datos">ingresa tus datos para regristrarte</p>
-                                <button class="boton-iniciar-secion" onclick="abrirModal2()">Login</button>
-                              </div>
-                              <div class="derecha">
-                                <h2 class="crear-cuenta">Crear tu Cuenta</h2>
-                                <p><small></small></p>
-                                <input class="input" type="text" placeholder="Nombre">
-                                <input class="input" type="email" placeholder="email">
-                                <input class="input" type="password" placeholder="password">
-                                <button class="boton">ÚNETE</button>
-                              </div>
-                            </div>
-                            <span class="cerrar" onclick="cerrarModal()">&times;</span>
-                          </div>
-                          <!-- inventando-->
-                        <div id="modal2Login" class="modal-fondo"  data-aos="fade-up" >
-                            <div class="modal2">
-                              <div class="izquierda">
-                                <h2 class="Bienvenidologin">MMG</h2>
-                                <p class="ingresa-tus-datos">ingresa tus datos para Login</p>
-                                
-                              </div>
-                              <div class="derecha">
-                                <h2 class="crear-cuenta">Login</h2>
-                                <p><small></small></p>
-                                <input class="input" type="email" placeholder="email">
-                                <input class="input" type="password" placeholder="password">
-                                <button class="boton">ÚNETE</button>
-                              </div>
-                            </div>
-                            <span class="cerrar" onclick="cerrarModal2()">&times;</span>
-                          </div>
-                          <script src="pagina_principal.js"></script>
-                           <!-- inventando-->
-                          
-
-
-
-
-                          <script src="pagina_principal.js"></script>
-
-                        <!-- final del modal -->
-
-
-
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <div class="content-shoping-cart"  data-aos="fade-up">
-                            <span class="text">carrito</span>
-                            <span class="number">(0)</span>
-                        </div>
-                    </div> 
+        <div class="container-hero" >
+            <div class="container hero" >
+                <div class="custoner-support">
+                  <a href="pagina_principal.html">
+                    <img src="imagenes/WhatsApp Image 2025-02-22 at 10.01.49 AM.ico" width="50" alt="" class="imacon">
+                  </a>
+                    <div class="content-custoner-support">
+                        <span class="text">soporte al cliente</span>  
+                        <span class="number">4748398</span> 
+                    </div>  
+                </div> 
+                <div class="container-logo">
+                 
+                    <h1 class="logo"><a href="/">RD_Tecnology</a></h1>
                 </div>
-            </div>
-            <div class="container-navbar" data-aos="fade-up">
-              <nav class="navbar container">
-                  <i class="fa-solid fa-bars" id="menu-toggle"></i>
-                  <ul class="menu">
-                    <li><a href="pagina_principal.html">Tienda Online</a></li>
-                    <li><a href="pagina_MOVILES.html">Celulares</a></li>
-                    <li><a href="pagina_TV.html">TV</a></li>
-                    <li><a href="pagina_accesorios.html">Accesorios</a></li>
-                    <li><a href="pagina_electrodomesticos.html">Electrodomesticos</a></li>
-                    <li><a href="pagina_principal.html">Todo</a></li>
-                </ul>                
-                  <div class="search-form">
-                      <input type="search" placeholder="Buscar...">
-                      <button class="btn-search">
-                          <i class="fa-solid fa-magnifying-glass"></i>
-                      </button>
-                  </div>
-              </nav>
-          </div>
+                
+                <div class="container-user"  >
+                    <!-- Icono de login -->
+
+                    <i class="fas fa-user login-icon" onclick=abrirModal()  ></i>
+
+                    <!-- modal -->
+                    <div id="modalLogin" class="modal-fondo"  data-aos="fade-up" >
+                        <div class="modal">
+                          <div class="izquierda">
+                            <h2 class="Bienvenidologin">Bienvenido</h2>
+                            <p class="ingresa-tus-datos">ingresa tus datos para regristrarte</p>
+                            <button class="boton-iniciar-secion" onclick="abrirModal2()">Login</button>
+                          </div>
+                          <div class="derecha">
+                            <h2 class="crear-cuenta">Crear tu Cuenta</h2>
+                            <p><small></small></p>
+                            <input class="input" type="text" placeholder="Nombre" id="registerName">
+                            <input class="input" type="email" placeholder="email" id="registerEmail">
+                            <input class="input" type="password" placeholder="password" id="registerPassword">
+                            <button class="boton" onclick="handleRegister()">ÚNETE</button>
+                          </div>
+                          
+                        </div>
+                        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                      </div>
+                      <!-- inventando-->
+                      <div id="modal2Login" class="modal-fondo"  data-aos="fade-up" >
+                        <div class="modal2">
+                          <div class="izquierda">
+                            <h2 class="Bienvenidologin">MMG</h2>
+                            <p class="ingresa-tus-datos">ingresa tus datos para Login</p>
+                            
+                          </div>
+                          <div class="derecha">
+                            <h2 class="crear-cuenta">Login</h2>
+                            <p><small></small></p>
+                            <input class="input" type="email" placeholder="email" id="loginEmail" />
+                            <input class="input" type="password" placeholder="password" id="loginPassword">
+                            <button class="boton" onclick="handleLogin()">ÚNETE</button>
+                          </div>
+                        </div>
+                        <span class="cerrar" onclick="cerrarModal2()">&times;</span>
+                      </div>
+
+                       <!-- inventando-->
+                      
+
+
+
+
+                      <script>
+                        async function handleRegister() {
+                          const name = document.getElementById('registerName').value;
+                          const email = document.getElementById('registerEmail').value;
+                          const password = document.getElementById('registerPassword').value;
+
+                          try {
+                            const res = await fetch('http://localhost:4000/api/register', {
+                              method: 'POST',
+                              headers: {
+                                'Content-Type': 'application/json'
+                              },
+                              body: JSON.stringify({ name, email, password })
+                            });
+
+                            const data = await res.json();
+
+                            if (res.ok) {
+                              alert('✅ Registro exitoso. Ahora inicia sesión.');
+                              cerrarModal(); // o abre directamente el login
+                              abrirModal2(); // para llevarlo al login
+                            } else {
+                              alert(data.message || '❌ Error al registrarse');
+                            }
+                          } catch (err) {
+                            console.error(err);
+                            alert('⚠️ Error al conectar con el servidor');
+                          }
+                        }
+
+                      </script>
+
+                      <script>
+                    async function handleLogin() {
+                      const email = document.getElementById("loginEmail").value.trim();
+                      const password = document.getElementById("loginPassword").value.trim();
+
+                      if (!email || !password) {
+                        alert("⚠️ Por favor ingresa correo y contraseña.");
+                        return;
+                      }
+
+                      try {
+                        const res = await fetch("http://localhost:4000/api/login", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify({ email, password }),
+                        });
+
+                        const data = await res.json();
+
+                        if (res.ok) {
+                          alert("✅ Login exitoso");
+                          cerrarModal2();
+                        } else {
+                          alert(data.message || "❌ Usuario o contraseña incorrectos.");
+                        }
+                      } catch (err) {
+                        console.error("Error al conectar con el backend:", err);
+                        alert("⚠️ Error al conectar con el servidor");
+                      }
+                    }
+                      </script>
+
+                        <script>
+                          function abrirModal() {
+                            document.getElementById("modalLogin").style.display = "flex";
+                          }
+
+                          function cerrarModal() {
+                            document.getElementById("modalLogin").style.display = "none";
+                          }
+
+                          function abrirModal2() {
+                            cerrarModal(); 
+                            document.getElementById("modal2Login").style.display = "flex";
+                          }
+
+                          function cerrarModal2() {
+                            document.getElementById("modal2Login").style.display = "none";
+                          }
+
+                          window.addEventListener("click", function (e) {
+                            if (e.target === document.getElementById("modalLogin")) cerrarModal();
+                            if (e.target === document.getElementById("modal2Login")) cerrarModal2();
+                          });
+
+                        </script>
+
+                    <!-- final del modal -->
+
+
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="content-shoping-cart"  data-aos="fade-up">
+                        <span class="text">carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div> 
             </div>
         </div>
-        
-        <script>
-          const menuToggle = document.getElementById('menu-toggle');
-          const navbarContent = document.querySelector('.navbar-content');
-        
-          menuToggle.addEventListener('click', () => {
-            navbarContent.classList.toggle('active');
-          });
-        </script>
-        
-      
+        <div class="container-navbar" data-aos="fade-up">
+          <nav class="navbar container">
+              <i class="fa-solid fa-bars" id="menu-toggle"></i>
+              <ul class="menu">
+                <li><a href="pagina_principal.html">Tienda Online</a></li>
+                <li><a href="pagina_MOVILES.html">Celulares</a></li>
+                <li><a href="pagina_TV.html">TV</a></li>
+                <li><a href="pagina_accesorios.html">Accesorios</a></li>
+                <li><a href="pagina_electrodomesticos.html">Electrodomesticos</a></li>
+                
+            </ul>                
+              <div class="search-form">
+                  <input type="search" placeholder="Buscar...">
+                  <button class="btn-search">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+              </div>
+          </nav>
+      </div>
+        </div>
+    </div>
+    
+    <script>
+      const toggleMenu = document.getElementById('menu-toggle');
+      const menu = document.querySelector('.menu');
+    
+      toggleMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    </script>
+    
+    
+  
 
 
-    </header>
+</header>
     <section class="banner" data-aos="fade-up">
       <video autoplay muted loop playsinline class="video-banner">
         <source src="videos/Bespoke My Life(720P_HD).mp4" type="video/mp4">
@@ -138,7 +231,7 @@
       <div class="content-banner">
         <p>tecnologia al alcance de tus manos</p>
         <h2>RD_Tecnology <br>Electrodomesticos</h2>
-        
+      
       </div>
     </section>
 
@@ -154,128 +247,276 @@
         <h1 class="parrafo-ofertas">Ofertas </h1>
     </div>
     
-    
+        <!-- Este contenedor envuelve los productos dinámicos -->
         <div class="container-products1" data-aos="fade-up">
-            <!--producto1-->
+          <div id="Ofertas-Electrodomesticos" class="grid-productos"></div>
+        </div>
+      
+        <!-- Template debe estar fuera del grid -->
+        <template id="product-template">
           <div class="card-product1" data-aos="fade-up">
             <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                    
-                </div>
-            </div>
-            <div class="content-card-product1" >
-                <div class="stars1">
-                  <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3> <a class="samsungpro" href="pagina_producto.html?id=6621784d4dcff3a84e6f2b2b">Galaxy S22</a></h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-            <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                    
-                  </div>
+              <img class="product-img" src="" alt="">
+              <span class="discount1 product-discount"></span>
+              <div class="button-group1"></div>
             </div>
             <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3> <a class="samsungpro" href="pagina_producto.html?id=6621784d4dcff3a84e6f2b2b">Galaxy S22</a></h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
-            </div>
-          </div>
-          <!--producto1-->
-          <div class="card-product1" data-aos="fade-up">
-            <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3> <a class="samsungpro" href="pagina_producto.html?id=6621784d4dcff3a84e6f2b2b">Galaxy S22</a></h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
+              <div class="stars1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
               </div>
-          </div>
-            <!--producto1-->
-            <div class="card-product1" data-aos="fade-up">
-              <div class="container-img1">
-                <img src="imagenes/samsung1.jpeg" alt="samsung1">
-                <span class="discount1">-10%</span>
-                <div class="button-group1">
-                   
-                </div>
-            </div>
-            <div class="content-card-product1">
-                <div class="stars1">
-                  <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3> <a class="samsungpro" href="pagina_producto.html?id=6621784d4dcff3a84e6f2b2b">Galaxy S22</a></h3>
-                <span class="add-cart1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
+              <h3>
+                <a class="samsungpro product-link" href="pagina_producto.html"></a>
+              </h3>
+              <span class="add-cart1">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </span>
+              <p class="price1">
+                <span class="product-price"></span>
+                <span class="original-price"></span>
+              </p>
             </div>
           </div>
-          <!--producto1-->
+        </template>
+      
+       <!-- JS -->
+       <script>
+        async function getGalaxySProducts() {
+          try {
+            const response = await fetch("http://localhost:4000/api/allproducts");
+            const products = await response.json();
+      
+            const container = document.getElementById("Ofertas-Electrodomesticos");
+            const template = document.getElementById("product-template");
+      
+            // 🔍 Modelos Galaxy S que quieres mostrar
+            const galaxyModels = ["Ofertas-Electrodomesticos"];
+      
+            // 📦 Filtrar productos por modelo
+            const galaxySProducts = products.filter(product =>
+              galaxyModels.includes(product.model)
+            );
+      
+            // 🧱 Renderizar solo los Galaxy S
+            galaxySProducts.forEach(product => {
+              const clone = template.content.cloneNode(true);
+      
+              const img = clone.querySelector(".product-img");
+              img.src = product.imageURL;
+              img.alt = product.name;
+      
+              clone.querySelector(".product-discount").textContent = `-${product.discount}%`;
+      
+              const link = clone.querySelector(".product-link");
+              link.textContent = product.name;
+              link.href = `pagina_producto.html?id=${product._id}`;
+      
+              const finalPrice = (product.price * (1 - product.discount / 100)).toFixed(2);
+              clone.querySelector(".product-price").textContent = `$${parseFloat(finalPrice).toLocaleString("es-ES")}`;
+              clone.querySelector(".original-price").textContent = `$${product.price.toLocaleString("es-ES")}`;
+      
+              container.appendChild(clone);
+            });
+      
+          } catch (error) {
+            console.error("Error al cargar los productos Galaxy S:", error);
+          }
+        }
+      
+        getGalaxySProducts();
+      </script>
+
+
+
+
+  <!--producto1-->
+    <!--producto1-->
+      <!--producto1-->
+      <section id="Limp">
+<div class="productos-venta"data-aos="fade-up">
+  
+  <div class="ofertas" data-aos="fade-up">
+        <h1 class="parrafo-ofertas">Limpieza </h1>
+    </div>
+    
+        <!-- Este contenedor envuelve los productos dinámicos -->
+        <div class="container-products1" data-aos="fade-up">
+          <div id="Limpieza" class="grid-productos"></div>
+        </div>
+      
+        <!-- Template debe estar fuera del grid -->
+        <template id="product-template">
           <div class="card-product1" data-aos="fade-up">
             <div class="container-img1">
-              <img src="imagenes/samsung1.jpeg" alt="samsung1">
-              <span class="discount1">-10%</span>
-              <div class="button-group1">
-                    
-                  </div>
-                </div>
-                <div class="content-card-product1">
-                <div class="stars1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h3> <a class="samsungpro" href="pagina_producto.html?id=6621784d4dcff3a84e6f2b2b">Galaxy S22</a></h3>
-                <span class="add-cart1">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <p class="price1">$100.65 <span>$110.65</span></p>
+              <img class="product-img" src="" alt="">
+              <span class="discount1 product-discount"></span>
+              <div class="button-group1"></div>
+            </div>
+            <div class="content-card-product1">
+              <div class="stars1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>
+                <a class="samsungpro product-link" href=""></a>
+              </h3>
+              <span class="add-cart1">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </span>
+              <p class="price1">
+                <span class="product-price"></span>
+                <span class="original-price"></span>
+              </p>
             </div>
           </div>
+        </template>
+      
+       <!-- JS -->
+       <script>
+        async function getGalaxySProducts() {
+          try {
+            const response = await fetch("http://localhost:4000/api/allproducts");
+            const products = await response.json();
+      
+            const container = document.getElementById("Limpieza");
+            const template = document.getElementById("product-template");
+      
+            // 🔍 Modelos Galaxy S que quieres mostrar
+            const galaxyModels = ["Limpieza"];
+      
+            // 📦 Filtrar productos por modelo
+            const galaxySProducts = products.filter(product =>
+              galaxyModels.includes(product.model)
+            );
+      
+            // 🧱 Renderizar solo los Galaxy S
+            galaxySProducts.forEach(product => {
+              const clone = template.content.cloneNode(true);
+      
+              const img = clone.querySelector(".product-img");
+              img.src = product.imageURL;
+              img.alt = product.name;
+      
+              clone.querySelector(".product-discount").textContent = `-${product.discount}%`;
+      
+              const link = clone.querySelector(".product-link");
+              link.textContent = product.name;
+              link.href = `pagina_producto.html?id=${product._id}`;
+      
+              const finalPrice = (product.price * (1 - product.discount / 100)).toFixed(2);
+              clone.querySelector(".product-price").textContent = `$${parseFloat(finalPrice).toLocaleString("es-ES")}`;
+              clone.querySelector(".original-price").textContent = `$${product.price.toLocaleString("es-ES")}`;
+      
+              container.appendChild(clone);
+            });
+      
+          } catch (error) {
+            console.error("Error al cargar los productos Galaxy S:", error);
+          }
+        }
+      
+        getGalaxySProducts();
+      </script>
+      </section>
+
+  <!--producto1-->
+    <!--producto1-->
+      <!--producto1-->
+      <section id="Coci">
+<div class="productos-venta"data-aos="fade-up">
+  
+  <div class="ofertas" data-aos="fade-up">
+        <h1 class="parrafo-ofertas">Cocina</h1>
+    </div>
+    
+        <!-- Este contenedor envuelve los productos dinámicos -->
+        <div class="container-products1" data-aos="fade-up">
+          <div id="Cocina" class="grid-productos"></div>
+        </div>
+      
+        <!-- Template debe estar fuera del grid -->
+        <template id="product-template">
+          <div class="card-product1" data-aos="fade-up">
+            <div class="container-img1">
+              <img class="product-img" src="" alt="">
+              <span class="discount1 product-discount"></span>
+              <div class="button-group1"></div>
+            </div>
+            <div class="content-card-product1">
+              <div class="stars1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>
+                <a class="samsungpro product-link" href=""></a>
+              </h3>
+              <span class="add-cart1">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </span>
+              <p class="price1">
+                <span class="product-price"></span>
+                <span class="original-price"></span>
+              </p>
+            </div>
           </div>
+        </template>
+      
+       <!-- JS -->
+       <script>
+        async function getGalaxySProducts() {
+          try {
+            const response = await fetch("http://localhost:4000/api/allproducts");
+            const products = await response.json();
+      
+            const container = document.getElementById("Cocina");
+            const template = document.getElementById("product-template");
+      
+            // 🔍 Modelos Galaxy S que quieres mostrar
+            const galaxyModels = ["Cocina"];
+      
+            // 📦 Filtrar productos por modelo
+            const galaxySProducts = products.filter(product =>
+              galaxyModels.includes(product.model)
+            );
+      
+            // 🧱 Renderizar solo los Galaxy S
+            galaxySProducts.forEach(product => {
+              const clone = template.content.cloneNode(true);
+      
+              const img = clone.querySelector(".product-img");
+              img.src = product.imageURL;
+              img.alt = product.name;
+      
+              clone.querySelector(".product-discount").textContent = `-${product.discount}%`;
+      
+              const link = clone.querySelector(".product-link");
+              link.textContent = product.name;
+              link.href = `pagina_producto.html?id=${product._id}`;
+      
+              const finalPrice = (product.price * (1 - product.discount / 100)).toFixed(2);
+              clone.querySelector(".product-price").textContent = `$${parseFloat(finalPrice).toLocaleString("es-ES")}`;
+              clone.querySelector(".original-price").textContent = `$${product.price.toLocaleString("es-ES")}`;
+      
+              container.appendChild(clone);
+            });
+      
+          } catch (error) {
+            console.error("Error al cargar los productos Galaxy S:", error);
+          }
+        }
+      
+        getGalaxySProducts();
+      </script>
+      </section>
           
           
           
@@ -297,35 +538,31 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const hash = window.location.hash;
+          if (hash) {
+            const section = document.querySelector(hash);
+            if (section) {
+              setTimeout(() => {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+              }, 300); // espera que cargue bien la página
+            }
+          }
+        });
+      </script>
+      
+      <style>
+        html {
+          scroll-behavior: smooth;
+        }
+      
+        #Coci,
+        #Limp {
+          scroll-margin-top: 100px; /* Ajusta si tienes header fijo */
+        }
+      </style>
+      
 
 
 
@@ -350,9 +587,7 @@
 
 
 
-    <!-- footer-->
-<!-- footer-->
-<!-- footer-->
+  
 <footer class="footerc"  data-aos="fade-up">
     <div class="footerc-top">
       <div class="footerc-column">

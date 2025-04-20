@@ -198,6 +198,7 @@ html {
     background-color: #fff;
     height: 4.4rem;
     overflow: hidden;
+    margin-left: auto;
 }
 
 .search-form input {
@@ -1135,6 +1136,21 @@ html {
   /*modal login*/
 
   /* fin del Contenedor del modal */
+
+
+
+  #GalaS,
+  #GalaZ,
+  #GalaA {
+    scroll-margin-top: 100px; /* ajusta este valor según el alto de tu header */
+  }
+  
+
+
+
+
+
+
 
 
 

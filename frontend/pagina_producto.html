@@ -82,6 +82,40 @@
 
 
                           <script src="pagina_principal.js"></script>
+                          <script>
+                            function abrirModal() {
+                              document.getElementById("modalLogin").style.display = "flex";
+                            }
+                        
+                            function cerrarModal() {
+                              document.getElementById("modalLogin").style.display = "none";
+                            }
+                        
+                            function abrirModal2() {
+                              cerrarModal(); // cierra el anterior
+                              document.getElementById("modal2Login").style.display = "flex";
+                            }
+                        
+                            function cerrarModal2() {
+                              document.getElementById("modal2Login").style.display = "none";
+                            }
+                        
+                            window.addEventListener("click", function (e) {
+                              if (e.target === document.getElementById("modalLogin")) cerrarModal();
+                              if (e.target === document.getElementById("modal2Login")) cerrarModal2();
+                            });
+                        
+                            function handleRegister() {
+                              alert("Simulación de registro");
+                              cerrarModal();
+                              abrirModal2();
+                            }
+                        
+                            function handleLogin() {
+                              alert("Simulación de login");
+                              cerrarModal2();
+                            }
+                          </script>
 
                         <!-- final del modal -->
 
@@ -134,31 +168,76 @@
 
     
 
-
     <div class="containerpro" data-aos="fade-up">
-        <div class="image-sectionpro">
-          <img id="product-image" src="imagenes/samsung1.jpeg" alt="Producto" />
-        </div>
-      
-        <div class="details-sectionpro">
-          <h1 id="product-name">Nombre del producto</h1>
-          <p class="pricepro" id="product-price">RD$ 0.00</p>
-          <p class="old-price" id="product-old-price"></p>
-          <p class="stockpro" id="product-stock">Sólo queda X unidades</p>
-      
-          <ul id="product-description"></ul>
-      
-          <div class="infopro">
-            <p><strong>Marca:</strong> <span id="brand"></span></p>
-            <p><strong>Modelo:</strong> <span id="model"></span></p>
-            <p><strong>Color:</strong> <span id="color"></span></p>
-            <p><strong>Almacenamiento:</strong> <span id="storage"></span></p>
-            <p><strong>Categoría:</strong> <span id="category"></span></p>
-          </div>
-      
-          <button class="buy-button">Añadir al carrito</button>
-        </div>
+      <div class="image-sectionpro">
+        <img id="product-image" src="" alt="Imagen del producto" />
       </div>
+    
+      <div class="details-sectionpro">
+        <h1 id="product-name">Cargando nombre...</h1>
+        <p class="pricepro" id="product-price">RD$ 0.00</p>
+        <p class="old-price" id="product-old-price"></p>
+        <p class="stockpro" id="product-stock">Cargando stock...</p>
+   
+    
+        
+    
+        <div class="infopro">
+          
+          <p><strong>description:</strong> <span id="product-description" class="description"></span></p>
+          <p><strong>Marca:</strong> <span id="brand"></span></p>
+          <p><strong>Modelo:</strong> <span id="model"></span></p>
+          <p><strong>Color:</strong> <span id="color"></span></p>
+          <p><strong>Almacenamiento:</strong> <span id="storage"></span></p>
+          <p><strong>Categoría:</strong> <span id="category"></span></p>
+        </div>
+        <div class="buy-icon">
+        <span class="add-cart1">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </span>
+      </div>
+      </div>
+    </div>
+
+    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get("id");
+    
+        if (!productId) {
+          alert("No se encontró el ID del producto en la URL.");
+          return;
+        }
+    
+        try {
+          const response = await fetch(`http://localhost:4000/api/products/${productId}`);
+          if (!response.ok) throw new Error("Producto no encontrado");
+    
+          const product = await response.json();
+    
+          // Asignar valores dinámicamente
+          document.getElementById('product-name').textContent = product.name;
+          document.getElementById('product-price').textContent = `RD$ ${parseFloat(product.price).toLocaleString("es-DO")}`;
+          document.getElementById('product-old-price').textContent = product.discount > 0
+            ? `Antes: RD$ ${(product.price / (1 - product.discount / 100)).toFixed(2)}`
+            : '';
+          document.getElementById('product-stock').textContent = `Sólo queda ${product.stock} unidades`;
+          document.getElementById('product-description').textContent = product.description.innerHTML = `${product.description}`;
+          document.getElementById('brand').textContent = product.brand || "Desconocida";
+          document.getElementById('model').textContent = product.model || "N/A";
+          document.getElementById('color').textContent = product.color || "N/A";
+          document.getElementById('storage').textContent = product.storage || "N/A";
+          document.getElementById('category').textContent = product.category || "Sin categoría";
+          document.getElementById('product-image').src = product.imageURL;
+        } catch (err) {
+          console.error("Error al obtener el producto:", err);
+          alert("Hubo un problema al cargar el producto.");
+        }
+      });
+    </script>
+    
 
       
     
